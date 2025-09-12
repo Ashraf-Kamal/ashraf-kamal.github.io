@@ -163,14 +163,17 @@
             transition: all 0.3s ease;
         }
 
-        /* Profile Section */
+        /* Profile Section */      
         .profile-section {
             display: flex;
             gap: 5rem;
             padding: 4rem 3rem;
-            background: var(--white);
+            background: none;
             align-items: center;
+            /* Add extra top padding to move head of figure down */
+            padding-top: 3.5rem;
         }
+/* ...existing code... */
 
         .profile-image {
             flex-shrink: 0;
@@ -187,7 +190,7 @@
             color: white;
             font-size: 90px;
             font-weight: bold;
-            border: 6px solid var(--light-bg);
+            border: none;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
@@ -293,7 +296,7 @@
         }
 
         .section h2::after {
-            content: '';
+            content: none;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -398,7 +401,7 @@
         /* Experience Timeline */
         .experience-timeline {
             position: relative;
-            padding-left: 40px;
+            padding-left: 32px;
         }
 
         .experience-timeline::before {
@@ -465,7 +468,7 @@
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            border-left: 4px solid var(--secondary-color);
+           /* border-left: 4px solid var(--secondary-color); */
         }
 
         .education-card:hover {
@@ -539,7 +542,7 @@
             background: var(--light-bg);
             padding: 1rem;
             border-radius: 8px;
-            border-left: 3px solid var(--secondary-color);
+            /*border-left: 3px solid var(--secondary-color); */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -561,8 +564,8 @@
         /* Patents Section */
         .patent-grid {
             display: grid;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 0.7rem;
+            margin-top: 1rem;
         }
 
         .patent-card {
@@ -571,7 +574,7 @@
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--secondary-color);
+            /* border-left: 4px solid var(--secondary-color); */
             position: relative;
         }
 
@@ -607,8 +610,9 @@
             color: var(--dark-gray);
             margin-bottom: 1rem;
             font-size: 1.3rem;
-            padding-left: 15px;
-            border-left: 3px solid var(--secondary-color);
+            padding-left: 0;
+            /*border-left: 3px solid var(--secondary-color);*/
+            border-left: none;
         }
 
         .publication-list {
@@ -617,27 +621,30 @@
         }
 
         .publication-list li {
-            background: var(--white);
+            background: var(--light-bg); /* Match patent card background */
             padding: 1.5rem;
             margin-bottom: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: background 0.3s ease;
+            border-radius: 10px;
+            /* border-left: 4px solid var(--accent-color); */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Match patent card shadow */
+            transition: background 0.3s ease, transform 0.3s ease;
             position: relative;
         }
 
         .publication-list li:hover {
-            background: var(--light-bg);
+            background: var(--light-accent); /* Match patent card hover */
+            transform: translateY(-5px);     /* Match patent card hover effect */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
+
 
         .publication-number {
             position: absolute;
             left: -15px;
             top: 50%;
             transform: translateY(-50%);
-            background: var(--accent-color);
-            color: var(--white);
+            background: var(--white);
+            color: var(--secondary-color); /* Blue color for number */
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -646,7 +653,9 @@
             justify-content: center;
             font-weight: bold;
             font-size: 14px;
+            border: 2px solid var(--secondary-color); /* Blue border for circle */
         }
+
 
         .publication-links {
             display: flex;
@@ -803,8 +812,29 @@
                 transform: translateY(0);
             }
         }
+
+        /* ...existing code... */
+/* ...existing code... */
+.section#publications,
+.section#awards,
+.section#service,
+.section#blog,
+.contact-section {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border-top: 1px solid var(--border-light); /* Thin horizontal line at top */
+}
+
+/* ...existing code... */
+/* ...existing code... */
+
+    
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -817,6 +847,8 @@
                 <li><a href="#service">Service</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
+             
+               
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
@@ -830,15 +862,29 @@
             <!-- Profile Section -->
             <div class="profile-section">
                 <div class="profile-image">
-                    <img src="upload/pic1.jpg" alt="Dr. Ashraf Kamal" class="profile-placeholder" style="object-fit: cover; width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--light-bg); box-shadow: 0 8px 25px rgba(0,0,0,0.15);" />
+                    <img src="upload/pic.jpg" alt="" class="profile-placeholder" style="object-fit:cover; object-position:center -10px; width:220px; height:220px; border-radius:50%; border:6px solid var(--light-bg); box-shadow:0 8px 25px rgba(0,0,0,0.15);" />
                 </div>
                 <div class="profile-info">
                     <h1>Dr. Ashraf Kamal</h1>
                     <div class="title">Associate Professor | Department of Computer Science</div>
                     <div class="contact-info">
-                        <span>📧 ashraf.kamal@university.edu</span>
-                        <span>📍 New Delhi, India</span>
-                    </div>
+                    <span>
+                        <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
+                                <rect x="2" y="4" width="20" height="16" rx="3" stroke="#3498db" stroke-width="2" fill="#fff"/>
+                                <path d="M3 6l9 7 9-7" stroke="#3498db" stroke-width="2" fill="none"/>
+                            </svg>
+                            ashraf.kamal@university.edu
+                        </a>
+                    </span>
+                    <span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" stroke="#3498db" stroke-width="2" fill="#fff"/>
+                            <circle cx="12" cy="9.5" r="2.5" fill="#3498db"/>
+                        </svg>
+                        New Delhi, India
+                    </span>
+                </div>
                     <div class="social-links">
                         <a href="https://scholar.google.com/citations?user=XKkMYFwAAAAJ" target="_blank" title="Google Scholar">
                             <svg viewBox="0 0 24 24">
@@ -884,6 +930,33 @@
                 </div>
             </div>
 
+            <!-- ...existing code... -->
+        <div class="main-content">
+            <!-- News Section  -->
+             <!-- 
+            <div class="section" id="news">
+                <h2>News</h2>
+                <ul style="font-size:1rem;">
+                    <li>May 2025: Invited keynote at International AI Summit, Singapore.</li>
+                    <li>April 2025: New US patent granted on privacy-preserving ML.</li>
+                    <li>March 2025: Paper accepted at ACL 2025.</li>
+                    <li>February 2025: Received Young Faculty Research Fellowship, Govt. of India.</li>
+                </ul>
+            </div> -->
+
+       
+            <!-- News Section -->
+            <div class="section" id="news">
+                <h2>Latest News</h2>
+                <marquee behavior="scroll" direction="down" scrollamount="3" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
+                    May 2025: Invited keynote at International AI Summit, Singapore. <br>
+                    April 2025: New US patent granted on privacy-preserving ML. <br>
+                    March 2025: Paper accepted at ACL 2025.  <br>
+                    February 2025: Received Young Faculty Research Fellowship, Govt. of India.
+                </marquee>
+            </div>
+<!-- ...existing code... -->
+
             <!-- About Section with Tabs -->
             <div class="section" id="about">
                 <h2>About</h2>
@@ -896,10 +969,17 @@
 
                 <div id="overview" class="tab-content active">
                     <div class="expandable-content" id="overviewContent">
-                        <p>I am an Associate Professor in the Department of Computer Science with over 15 years of experience in AI and Machine Learning research. My work focuses on developing large-scale foundational models with applications in healthcare and natural language processing.</p>
-                        <p>I have published over 150 papers in top-tier conferences and journals, and my research has been cited over 15,000 times. I am passionate about advancing AI while ensuring its ethical and responsible deployment.</p>
-                        <p>My research journey began with a focus on natural language processing, particularly in developing multilingual models for content moderation and sentiment analysis. Over the years, I have expanded my expertise to include computer vision, federated learning, and explainable AI systems.</p>
-                        <p>I have been fortunate to collaborate with leading researchers worldwide and have received numerous awards and recognitions for my contributions to the field. My current research focuses on developing trustworthy AI systems that can be deployed in critical applications while maintaining transparency and fairness.</p>
+                        <p style="text-align:justify;"></p>
+                            Dr. Ashraf Kamal has earned Doctor of Philosophy (PhD) - Computer Science from Jamia Millia Islamia (A Central University with A++ grade by the NAAC), New Delhi, India. PhD was funded by Ministry of Electronics & Information Technology, Government of India under prestigious Visvesvaraya PhD scheme. Research work is substantiated by more than 20 research publications and 5 US patents (2 Granted; 3 Published). Research papers are published in reputed SCI-indexed journals, including two in IEEE/ACM Transactions and CORE ranking conferences. Research interest lies in the intersection of Computational Linguistics, GenAI, ML, DL, and NLP. Research areas include the detection of figurative language like sarcasm & irony, abusive data, fake news, rumor, fintech, etc., in user-generated content via machine and deep learning techniques.
+                        </p>
+                        <br> 
+                        <p style="text-align:justify;">
+                            Working in Privacy ML Team at PayPal. Experience in Machine Learning (ML), Deep Learning (DL), Text Mining, Natural Language Processing, Generative AI, IR, RAG, and Agentic AI. Currently, involved in develop novel theoretical ideas with practical insights, publish technical research papers, patent filing, and tech excellence activities on emerging technologies in Fintech. Besides that, involved in several GenAI related projects.
+                        </p>
+                        <br>
+                        <p style="text-align:justify;">
+                            Proficient in predictive modelling, statistical analysis tools and techniques, exploratory data analysis, data processing, and data mining algorithms, as well as scripting language, including Python. Capable in leveraging advance analytics to drive strategic decision-making and efficient in ideation and development of highly adaptive, robust, and diverse applications to translate business functionalities into substantial deliverables.
+                        </p>
                     </div>
                     <button class="read-more-btn" onclick="toggleExpand('overviewContent', this)">Read More</button>
                     
@@ -907,30 +987,35 @@
                     <div class="metrics-section">
                         <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Citation Metrics & Research Impact</h3>
                         <div class="metrics-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">15,000+</div>
-                                <div class="metric-label">Total Citations</div>
+                             <div class="metric-card">
+                                <div class="metric-value">20+</div>
+                                <div class="metric-label">Total Publication</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">65+</div>
+                                <div class="metric-value">550+</div>
+                                <div class="metric-label">Citations</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">10</div>
                                 <div class="metric-label">h-index</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">140+</div>
+                                <div class="metric-value">10</div>
                                 <div class="metric-label">i10-index</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">85+</div>
+                                <div class="metric-value">2</div>
+                                <div class="metric-label">Grand Patents</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">6</div>
                                 <div class="metric-label">Journal Papers</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">60+</div>
+                                <div class="metric-value">11</div>
                                 <div class="metric-label">Conference Papers</div>
                             </div>
-                            <div class="metric-card">
-                                <div class="metric-value">10+</div>
-                                <div class="metric-label">Book Chapters</div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -970,18 +1055,18 @@
                     <div class="education-grid">
                         <div class="education-card">
                             <div class="education-degree">Ph.D. in Computer Science</div>
-                            <div class="education-school">Carnegie Mellon University</div>
-                            <div class="education-date">2008 - 2012</div>
+                            <div class="education-school">Jamia Millia Islamia</div>
+                            <div class="education-date">2015 - 2021</div>
                         </div>
                         <div class="education-card">
-                            <div class="education-degree">M.Tech in Machine Intelligence</div>
-                            <div class="education-school">Indian Institute of Technology</div>
-                            <div class="education-date">2006 - 2008</div>
+                            <div class="education-degree">Master of Computer Applications </div>
+                            <div class="education-school">Jamia Millia Islamia</div>
+                            <div class="education-date">2007 - 2010</div>
                         </div>
                         <div class="education-card">
-                            <div class="education-degree">B.E. in Computer Engineering</div>
-                            <div class="education-school">Delhi University</div>
-                            <div class="education-date">2002 - 2006</div>
+                            <div class="education-degree">Bachelors of Science (Honours) Physics</div>
+                            <div class="education-school">Jamia Millia Islamia</div>
+                            <div class="education-date">2003 - 2006</div>
                         </div>
                     </div>
                 </div>
@@ -989,12 +1074,12 @@
                 <div id="skills" class="tab-content">
                     <h3>Technical Skills</h3>
                     <ul style="list-style: disc; padding-left: 20px;">
-                        <li>Machine Learning & Deep Learning</li>
+                        <li>Machine Learning</li>
                         <li>Natural Language Processing</li>
-                        <li>Computer Vision</li>
-                        <li>Federated Learning</li>
+                        <li>Generative AI</li>
+                        <li>Agentic AI</li>
                         <li>Python, TensorFlow, PyTorch</li>
-                        <li>Research Leadership & Grant Writing</li>
+                        <li>Research Leadership</li>
                     </ul>
                 </div>
             </div>
@@ -1023,36 +1108,135 @@
                         <h3>⚖️ AI Ethics</h3>
                         <p>Fairness and bias mitigation</p>
                     </div>
-                    <div class="interest-card">
-                        <h3>🏥 Healthcare AI</h3>
-                        <p>Medical image analysis</p>
-                    </div>
+                    
                 </div>
             </div>
 
             <!-- Patents Section -->
+            <!-- ...existing code... -->
+            <!-- Patents Section -->
             <div class="section" id="patents">
                 <h2>Patents</h2>
                 <div class="patent-grid">
-                    <div class="patent-card">
-                        <span class="patent-number">P1</span>
-                        <div style="margin-left: 20px;">
-                            <div class="patent-title">System and Method for Adaptive Neural Network Optimization</div>
-                            <div>Inventors: Kamal, A., Johnson, A., Lee, M.</div>
-                            <div>US Patent #11,234,567 | Granted: August 2024</div>
+                    <!-- Granted Patents -->
+                    <div class="subsection">
+                        <h3>Granted Patents</h3>
+                        <div class="patent-card">
+                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
+                                P1
+                            </a>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Federated Learning Framework for Distributed Healthcare Systems
+                                </div>
+                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div>
+                                    US Patent Application #20240012345 | 
+                                    <span class="patent-status filed">Filed: March 2024</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="patent-card">
+                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
+                                P1
+                            </a>
+                         
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Federated Learning Framework for Distributed Healthcare Systems
+                                </div>
+                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div>
+                                    US Patent Application #20240012345 | 
+                                    <span class="patent-status filed">Filed: March 2024</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="patent-card">
-                        <span class="patent-number">P2</span>
-                        <div style="margin-left: 20px;">
-                            <div class="patent-title">Federated Learning Framework for Distributed Healthcare Systems</div>
-                            <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
-                            <div>US Patent Application #20240012345 | Filed: March 2024</div>
+                    <!-- Filed Patents -->
+                    <div class="subsection">
+                        <h3>Filed Patents</h3>
+                        <div class="patent-card">
+                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
+                                P2
+                            </a>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Federated Learning Framework for Distributed Healthcare Systems
+                                </div>
+                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div>
+                                    US Patent Application #20240012345 | 
+                                    <span class="patent-status filed">Filed: March 2024</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Published Patents -->
+                    <div class="subsection">
+                        <h3>Published Patents</h3>
+                        <div class="patent-card">
+                            <a href="https://patents.google.com/patent/US11234567/en" target="_blank" class="patent-number" style="text-decoration:none;">
+                                P1
+                            </a>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Adaptive Neural Network Optimization
+                                </div>
+                                <div>Inventors: Kamal, A., Johnson, A., Lee, M.</div>
+                                <div>
+                                    US Patent #11,234,567 | 
+                                    <span class="patent-status published">
+                                        <a href="https://patents.google.com/patent/US11234567/en" target="_blank" style="color:inherit;text-decoration:underline;font-weight:bold;">Published</a>
+                                    </span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                    <a href="#">PDF</a>
+                                    <a href="https://patents.google.com/patent/US11234567/en" target="_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="patent-card">
+                            <a href="https://patents.google.com/patent/US20240012345/en" target="_blank" class="patent-number" style="text-decoration:none;">
+                                P2
+                            </a>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Federated Learning Framework for Distributed Healthcare Systems
+                                </div>
+                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div>
+                                    US Patent Application #20240012345 | 
+                                    <span class="patent-status published">
+                                        <a href="https://patents.google.com/patent/US20240012345/en" target="_blank" style="color:inherit;text-decoration:underline;font-weight:bold;">Published</a>
+                                    </span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                    <a href="#">PDF</a>
+                                    <a href="https://patents.google.com/patent/US20240012345/en" target="_blank">Link</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div></span></div>
+<!-- ...existing code... -->
 
+
+
+<!-- ...existing code... -->
             <!-- Publications Section -->
             <div class="section" id="publications">
                 <h2>Publications</h2>
@@ -1118,6 +1302,85 @@
                 </div>
             </div>
 
+            <!-- ...existing code... -->
+            <!-- Awards & Recognition Section -->
+            <!-- ...existing code... -->
+            <!-- Awards & Recognition Section -->
+            <div class="section" id="awards">
+                <h2>Awards & Recognition</h2>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <h3>🏅 ACM Distinguished Scientist Award</h3>
+                        <p>2024</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>🥇 Best Paper Award, NeurIPS</h3>
+                        <p>2023</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>🎖️ IEEE Senior Member</h3>
+                        <p>2022</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>🌟 Outstanding Reviewer, ICML</h3>
+                        <p>2021</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>🧑‍🔬 Young Faculty Research Fellowship</h3>
+                        <p>Govt. of India, 2020</p>
+                    </div>
+                </div>
+            </div>
+<!-- ...existing code... -->
+
+            <!-- ...existing code... -->
+            <!-- Service Section -->
+           <!-- ...existing code... -->
+            <!-- Service Section -->
+            <div class="section" id="service">
+                <h2>Service</h2>
+                <div class="metrics-section">
+                    <div class="metrics-grid">
+                        <div class="metric-card" style="text-align:left;">
+                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Program Committee Member</div>
+                            <ul style="padding-left:1.2rem; margin-bottom:0;">
+                                <li>NeurIPS</li>
+                                <li>ICML</li>
+                                <li>AAAI</li>
+                                <li>CVPR</li>
+                                <li>ACL</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card" style="text-align:left;">
+                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer</div>
+                            <ul style="padding-left:1.2rem; margin-bottom:0;">
+                                <li>Nature</li>
+                                <li>Science</li>
+                                <li>IEEE Transactions</li>
+                                <li>JMLR</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card" style="text-align:left;">
+                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Editorial Board</div>
+                            <ul style="padding-left:1.2rem; margin-bottom:0;">
+                                <li>Journal of Machine Intelligence</li>
+                                <li>AI in Healthcare</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card" style="text-align:left;">
+                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Session Chair</div>
+                            <ul style="padding-left:1.2rem; margin-bottom:0;">
+                                <li>International Conference on AI, 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- ...existing code... -->
+
+<!-- ...existing code... -->
+               
+               
             <!-- Blog Section -->
             <div class="section" id="blog">
                 <h2>Recent Blog Posts</h2>
@@ -1147,20 +1410,35 @@
                 </div>
             </div>
 
-            <!-- Contact Section -->
+             <!-- ...existing code... -->
+        
+            <!-- News Section  -->
+              <!-- Contact Section -->
             <div class="contact-section" id="contact">
-                <h2>Contact Me</h2>
-                <p>Feel free to reach out for collaborations, research opportunities, or academic discussions</p>
+                <h2>Contact Me</h2> <br>
+                <p>Feel free to reach out for collaborations, research opportunities, or academic discussions</p> <br>
                 <a href="https://forms.google.com/your-form-link" target="_blank" class="contact-form-btn">
                     Open Contact Form
                 </a>
             </div>
-        </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Dr. Ashraf Kamal. All rights reserved.</p>
-    </footer>
+
+            
+
+            <!-- ...existing code... -->
+            <!-- News Section 
+            <div class="section" id="news">
+                <h2>News</h2>
+                <marquee behavior="scroll" direction="down" scrollamount="3" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
+                    May 2025: Invited keynote at International AI Summit, Singapore. <br>
+                    April 2025: New US patent granted on privacy-preserving ML. <br>
+                    March 2025: Paper accepted at ACL 2025.  <br>
+                    February 2025: Received Young Faculty Research Fellowship, Govt. of India.
+                </marquee>
+            </div>-->
+<!-- ...existing code... -->
+
+    </div>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">↑</div>
@@ -1258,5 +1536,36 @@
             });
         });
     </script>
+
+    <!-- ...existing code... -->
+<footer>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:0.95rem;">
+        <span style="flex:1; text-align:left;">&copy; 2025 - Ashraf Kamal, All Rights Reserved.</span>
+        <span id="visitor-country" style="flex:1; text-align:center;"></span>
+        <span id="visitor-count" style="flex:1; text-align:right;"></span>
+    </div>
+    <div style="text-align:center; font-size:0.95rem; margin-top:0.5rem;">Last Updated on :12-Sep-2025</div>
+</footer>
+<script>
+    // Visitor country (ipinfo.io)
+    fetch('https://ipinfo.io/json?token=YOUR_TOKEN_HERE')
+        .then(response => response.json())
+        .then(data => {
+            let country = data.country || 'Unknown';
+            document.getElementById('visitor-country').innerHTML =
+                `🌍 Visitor Country: <b>${country}</b>`;
+        });
+
+    // Total hit counter (localStorage, for demo only)
+    let hits = localStorage.getItem('site_hits');
+    hits = hits ? parseInt(hits) + 1 : 1;
+    localStorage.setItem('site_hits', hits);
+    document.getElementById('visitor-count').innerHTML =
+        `👁️ Total Hits: <b>${hits}</b>`;
+</script>
+<!-- ...existing code... -->
+
+
+
 </body>
 </html>
