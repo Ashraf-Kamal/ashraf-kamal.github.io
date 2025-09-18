@@ -124,7 +124,7 @@
         .theme-toggle {
             background: var(--light-bg);
             border: 1px solid var(--border-light);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 5px 10px;
             cursor: pointer;
             color: var(--text-color);
@@ -140,10 +140,10 @@
             background: var(--secondary-color);
             color: white !important;
             padding: 8px 20px;
-            border-radius: 25px;
+            border-radius: 10px;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 200;
             display: inline-block;
             text-decoration: none;
         }
@@ -575,10 +575,11 @@
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            /* border-left: 4px solid var(--secondary-color); */
+            transition: background 0.3s ease, transform 0.3s ease;
             position: relative;
+            margin-bottom: 1rem; /* Add space between patent cards */
         }
+
 
         /* Make patent number display match conference/publication number style */
         .patent-number {
@@ -603,10 +604,10 @@
             text-decoration: none;
         }
 
-        .patent-number:hover {
-            background: var(--secondary-color);
-            color: var(--white);
-            text-decoration: none;
+        .patent-card:hover {
+            background: var(--medium-white); /* Match journal card hover color */
+            transform: translateY(-5px);     /* Match journal card hover effect */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
         /* Publications */
         .subsection {
@@ -639,7 +640,7 @@
         }
 
         .publication-list li:hover {
-            background: var(--light-accent); /* Match patent card hover */
+            background: var(--medium-white); /* Match journal card hover color */
             transform: translateY(-5px);     /* Match patent card hover effect */
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
@@ -703,6 +704,7 @@
 
         .blog-card:hover {
             transform: translateY(-5px);
+            background: var(--medium-white); /* Match journal card hover color */
         }
 
         .blog-image {
@@ -1083,7 +1085,9 @@
                 </div>
                 <div class="profile-info">
                     <h1>Dr. Ashraf Kamal</h1>
-                    <div class="title">Associate Professor | Department of Computer Science</div>
+                    <div class="title">   Machine Learning Engineer |  <img src="upload/logo.png" alt="Logo" style="height:75px; vertical-align:middle; margin-right:8px;">
+                    </div>
+                    
                     <div class="contact-info">
                     <span>
                         <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
@@ -1091,54 +1095,52 @@
                                 <rect x="2" y="4" width="20" height="16" rx="3" stroke="#3498db" stroke-width="2" fill="#fff"/>
                                 <path d="M3 6l9 7 9-7" stroke="#3498db" stroke-width="2" fill="none"/>
                             </svg>
-                            ashraf.kamal@university.edu
-                        </a>
-                    </span>
-                    <span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
+                            contact@ashrafkamal.in  </a> |  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" stroke="#3498db" stroke-width="2" fill="#fff"/>
                             <circle cx="12" cy="9.5" r="2.5" fill="#3498db"/>
                         </svg>
                         New Delhi, India
+                       
                     </span>
+                    
                 </div>
                     <div class="social-links">
-                        <a href="https://scholar.google.com/citations?user=XKkMYFwAAAAJ" target="_blank" title="Google Scholar">
+                        <a href="https://scholar.google.com/citations?hl=en&user=XKkMYFwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar">
                             <svg viewBox="0 0 24 24">
                                 <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/ashraf-kamal-phd-81352b32/" target="_blank" title="LinkedIn">
+                        <a href="https://in.linkedin.com/in/ashraf-kamal-phd-81352b32" target="_blank" title="LinkedIn">
                             <svg viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
+                        <a href="https://orcid.org/my-orcid?orcid=0000-0002-8344-3792" target="_blank" title="ORCID">
                             <svg viewBox="0 0 24 24">
                                 <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
                             </svg>
                         </a>
-                        <a href="#" title="DBLP">
+                        <a href="https://dblp.org/pid/233/3505.html" target="_blank" title="DBLP">
                             <svg viewBox="0 0 24 24">
                                 <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H5V7h7v10zm7 0h-5V7h5v10z"/>
                             </svg>
                         </a>
-                        <a href="#" title="Scopus">
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=57206729848" target="_blank" title="Scopus">
                             <svg viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                             </svg>
                         </a>
-                        <a href="#" title="ResearchGate">
+                        <a href="https://www.researchgate.net/profile/Ashraf-Kamal-2" target="_blank" title="ResearchGate">
                             <svg viewBox="0 0 24 24">
                                 <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.821 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/>
                             </svg>
                         </a>
-                        <a href="#" title="Twitter">
+                        <a href="#" target="_blank" title="Twitter">
                             <svg viewBox="0 0 24 24">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
                         </a>
-                        <a href="#" title="Facebook">
+                        <a href="https://www.facebook.com/ashraf.kamal.948/" target="_blank" title="Facebook">
                             <svg viewBox="0 0 24 24">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
@@ -1166,10 +1168,10 @@
             <div class="section" id="news">
                 <h2>Latest News</h2>
                 <marquee behavior="scroll" direction="down" scrollamount="3" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
-                    May 2025: Invited keynote at International AI Summit, Singapore. <br>
-                    April 2025: New US patent granted on privacy-preserving ML. <br>
-                    March 2025: Paper accepted at ACL 2025.  <br>
-                    February 2025: Received Young Faculty Research Fellowship, Govt. of India.
+                    May 2025: Two US Patents Published. <br>
+                    June 2025: US Patent Issued (Granted). <br>
+                    July 2025: Presented the accpeted Paper at ICCCNT 2025, IIT Indore, India.  <br>
+                    August 2025: One US Patent Issued (Granted).
                 </marquee>
             </div>
 <!-- ...existing code... -->
@@ -1222,7 +1224,15 @@
                             </div>
                             <div class="metric-card">
                                 <div class="metric-value">2</div>
-                                <div class="metric-label">Grand Patents</div>
+                                <div class="metric-label">Granted Patents</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Published Patents</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">11</div>
+                                <div class="metric-label">Filed Patents</div>
                             </div>
                             <div class="metric-card">
                                 <div class="metric-value">6</div>
@@ -1231,6 +1241,10 @@
                             <div class="metric-card">
                                 <div class="metric-value">11</div>
                                 <div class="metric-label">Conference Papers</div>
+                            </div>
+                             <div class="metric-card">
+                                <div class="metric-value">1</div>
+                                <div class="metric-label">Book Chapter</div>
                             </div>
                             
                         </div>
@@ -1241,27 +1255,51 @@
                     <h3>Professional Experience</h3>
                     <div class="experience-timeline">
                         <div class="experience-item">
-                            <div class="experience-date">2020 - Present</div>
-                            <div class="experience-title">Associate Professor</div>
-                            <div class="experience-company">Department of Computer Science, University Name</div>
+                            <div class="experience-date">2023 - Present</div>
+                            <div class="experience-title">Machine Learning Engineer, Chennai, Tamil Nadu (Remote)</div>
+                            <div class="experience-company">PayPal</div>
                             <div class="experience-description">
-                                Leading research in AI/ML, supervising doctoral students, and teaching advanced courses in machine learning and neural networks.
+                             <!--   Leading research in AI/ML, supervising doctoral students, and teaching advanced courses in machine learning and neural networks. -->
                             </div>
                         </div>
                         <div class="experience-item">
-                            <div class="experience-date">2015 - 2020</div>
-                            <div class="experience-title">Assistant Professor</div>
-                            <div class="experience-company">Department of Computer Science, University Name</div>
+                            <div class="experience-date">2021 - 2023</div>
+                            <div class="experience-title">Data Scientist</div>
+                            <div class="experience-company">ACL Digital, Bengaluru, Karnataka (Remote)</div>
                             <div class="experience-description">
-                                Developed foundational models for various applications, led multiple research projects funded by NSF and industry partners.
+                             <!--   Developed foundational models for various applications, led multiple research projects funded by NSF and industry partners.  -->
                             </div>
                         </div>
                         <div class="experience-item">
-                            <div class="experience-date">2012 - 2015</div>
-                            <div class="experience-title">Postdoctoral Researcher</div>
-                            <div class="experience-company">AI Research Lab, MIT</div>
+                            <div class="experience-date">2015 - 2021</div>
+                            <div class="experience-title">Doctoral Researcher (PhD - Computer Science) </div>
+                            <div class="experience-company">Jamia Millia Islamia, New Delhi</div>
+                          <div class="experience-description">
+                             <!--   Focused on natural language processing and machine translation systems, published several high-impact papers.  -->
+                          </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2012 - 2013</div>
+                            <div class="experience-title">Software Engineer </div>
+                            <div class="experience-company">Altudo (<i>Formerly</i>, eDynamic Softech Solutions), Gurgaon, Haryana</div>
                             <div class="experience-description">
-                                Focused on natural language processing and machine translation systems, published several high-impact papers.
+                             <!--   Focused on natural language processing and machine translation systems, published several high-impact papers.  -->
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2011 - 2012</div>
+                            <div class="experience-title">Software Developer </div>
+                            <div class="experience-company">VAS Data Services (YEPME.com), Gurgaon, Haryana</div>
+                            <div class="experience-description">
+                             <!--   Focused on natural language processing and machine translation systems, published several high-impact papers.  -->
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2010 - 2011</div>
+                            <div class="experience-title">Software Engineer </div>
+                            <div class="experience-company">Oglacs Software Pvt. Ltd., New Delhi </div>
+                            <div class="experience-description">
+                             <!--   Focused on natural language processing and machine translation systems, published several high-impact papers.  -->
                             </div>
                         </div>
                     </div>
@@ -1337,113 +1375,218 @@
                 <div class="patent-grid">
                     <!-- Granted Patents -->
                     <div class="subsection">
-                        <h3>Granted Patents</h3>
+                        <h3 style="color: brown;">Granted Patents</h3>
                         <div class="patent-card">
-                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
-                                P1
-                            </a>
+                                <span class="patent-number">P1</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    Federated Learning Framework for Distributed Healthcare Systems
+                                    Systems and Methods for Leveraging Embedded Services
                                 </div>
-                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
                                 <div>
-                                    US Patent Application #20240012345 | 
-                                    <span class="patent-status filed">Filed: March 2024</span>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/219,308 </i>  </span>
+                                </div>
+                                 <div>
+                                    <span class="patent-status filed" style="color: green;">Grant: August 2025</span>
                                 </div>
                                 <div class="publication-links" style="margin-top:0.8rem;">
                                  
-                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                    <a href="https://patents.google.com/patent/US12386910B2/en" target="_blank">Link</a>
+                                    <a href="https://patents.google.com/patent/US12386910B2/en" target="_blank">PDF</a>
                                 </div>
                             </div>
                         </div>
                           <div class="patent-card">
-                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
-                                P1
-                            </a>
+                                <span class="patent-number">P2</span>
                          
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    Federated Learning Framework for Distributed Healthcare Systems
+                                    Systems and Methods for Leveraging Embedded Services 
                                 </div>
-                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
                                 <div>
-                                    US Patent Application #20240012345 | 
-                                    <span class="patent-status filed">Filed: March 2024</span>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/219,352 </i></span>
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Grant: June 2025</span>
                                 </div>
                                 <div class="publication-links" style="margin-top:0.8rem;">
                                  
-                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                    <a href="https://patents.google.com/patent/US12335108B2/en" target="_blank">Link</a>
+                                    <a href="https://patentimages.storage.googleapis.com/2f/9a/87/16fb81e6db0b8f/US12335108B2.pdf" target="_blank">PDF</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Published Patents -->
+                        <div class="subsection">
+                        <h3 style="color: brown;">Published Patents</h3>
+                        <div class="patent-card">
+                                 <span class="patent-number">P3</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Systems and methods for Early Fraud Detection in Deferred Transaction Services
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal </span>, and Vishal K. Singh</div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/521,115 </i>  </span>
+                                </div>
+                                 <div>
+                                    <span class="patent-status filed" style="color: green;">Published: May 2025</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20250173707A1/en" target="_blank">Link</a>
+                                    <a href="https://patentimages.storage.googleapis.com/25/a5/5e/34153e29d10460/US20250173707A1.pdf" target="_blank">PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="patent-card">
+                                <span class="patent-number">P4</span>
+                         
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Systems and methods for Early Fraud Detection in Deferred Transaction Services
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal</span>, and Vishal K. Singh</div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/521,212 </i></span>
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Published: May 2025</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20250173726A1/en" target="_blank">Link</a>
+                                    <a href="https://patentimages.storage.googleapis.com/11/e3/21/77f680a24f565d/US20250173726A1.pdf" target="_blank">PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patent-card">
+                             <span class="patent-number">P5</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    Digital Verification of Users Based On Real-time Video Stream
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Vishal K. Singh, Padmapriya Mohankumar, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/059,212 </i></span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Published: May 2024</span>
+                                </div>
+                                <div class="publication-links" style="margin-top:0.8rem;">
+                                 
+                                    <a href="https://patents.google.com/patent/US20240177519A1/en" target="_blank">Link</a>
+                                    <a href="https://patentimages.storage.googleapis.com/be/29/db/054c12aaa88803/US20240177519A1.pdf" target="_blank">PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Filed Patents -->
                     <div class="subsection">
-                        <h3>Filed Patents</h3>
+                        <h3 style="color: brown;">Filed Patents</h3>
                         <div class="patent-card">
-                            <a href="https://patents.google.com/patent/US20240012345" target="_blank" class="patent-number" style="text-decoration:none;">
-                                P2
-                            </a>
+                             <span class="patent-number">P6</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    Federated Learning Framework for Distributed Healthcare Systems
+                                    System and Method to Control Threats in AI-based Multi-Agents
                                 </div>
-                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal</span>, and Vishal K. Singh</div>
                                 <div>
-                                    US Patent Application #20240012345 | 
-                                    <span class="patent-status filed">Filed: March 2024</span>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
-                                <div class="publication-links" style="margin-top:0.8rem;">
-                                 
-                                    <a href="https://patents.google.com/patent/US20240012345" target="_blank">Link</a>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: July 2025</span>
                                 </div>
+                                
                             </div>
                         </div>
-                    </div>
-                    <!-- Published Patents -->
-                    <div class="subsection">
-                        <h3>Published Patents</h3>
+
                         <div class="patent-card">
-                            <a href="https://patents.google.com/patent/US11234567/en" target="_blank" class="patent-number" style="text-decoration:none;">
-                                P1
-                            </a>
+                             <span class="patent-number">P7</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    System and Method for Adaptive Neural Network Optimization
+                                    Privacy-Enforcing Smart Contracts with Compliance Automation for Data Sharing
                                 </div>
-                                <div>Inventors: Kamal, A., Johnson, A., Lee, M.</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
                                 <div>
-                                    US Patent #11,234,567 | 
-                                    <span class="patent-status published">
-                                        <a href="https://patents.google.com/patent/US11234567/en" target="_blank" style="color:inherit;text-decoration:underline;font-weight:bold;">Published</a>
-                                    </span>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
-                                <div class="publication-links" style="margin-top:0.8rem;">
-                                    <a href="#">PDF</a>
-                                    <a href="https://patents.google.com/patent/US11234567/en" target="_blank">Link</a>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: May 2025</span>
                                 </div>
+                                
                             </div>
                         </div>
-                        <div class="patent-card">
-                            <a href="https://patents.google.com/patent/US20240012345/en" target="_blank" class="patent-number" style="text-decoration:none;">
-                                P2
-                            </a>
+
+                         <div class="patent-card">
+                             <span class="patent-number">P8</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    Federated Learning Framework for Distributed Healthcare Systems
+                                    System and Method to Avoid Cross-Channel Risks in Omnichannel Services
                                 </div>
-                                <div>Inventors: Kamal, A., Patel, N., Williams, R.</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal</span>, and Vishal K. Singh</div>
                                 <div>
-                                    US Patent Application #20240012345 | 
-                                    <span class="patent-status published">
-                                        <a href="https://patents.google.com/patent/US20240012345/en" target="_blank" style="color:inherit;text-decoration:underline;font-weight:bold;">Published</a>
-                                    </span>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
-                                <div class="publication-links" style="margin-top:0.8rem;">
-                                    <a href="#">PDF</a>
-                                    <a href="https://patents.google.com/patent/US20240012345/en" target="_blank">Link</a>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: April 2025</span>
                                 </div>
+                                
+                            </div>
+                        </div>
+
+                         <div class="patent-card">
+                             <span class="patent-number">P9</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Interpretability of Complex Black-Box Models
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Vishal K. Singh, Padmapriya Mohankumar, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: April 2025</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                         <div class="patent-card">
+                             <span class="patent-number">P10</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Copyright and Data Protection in AI Models
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i> (TBA) </span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: September 2024</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                         <div class="patent-card">
+                             <span class="patent-number">P11</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Managing Threats in Open Banking Services
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> <span style="color: blue;">Ashraf Kamal</span>, Padmapriya Mohankumar, and Vishal K. Singh</div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: June 2024</span>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1460,27 +1603,93 @@
                 
                 <!-- Journal Publications -->
                 <div class="subsection">
-                    <h3>Journal Articles</h3>
+                    <h3 style="color: brown;">Journal Papers</h3>
                     <ul class="publication-list">
                         <li>
                             <span class="publication-number">J1</span>
                             <div style="margin-left: 20px;">
-                                <div class="publication-title">Deep Learning for Healthcare: Review, Opportunities and Challenges</div>
-                                <div>Ashraf Kamal, Johnson, A., Williams, M.</div>
-                                <div style="font-style: italic;">Nature Machine Intelligence, Vol. 6, pp. 123-145, 2024</div>
+                                <div class="publication-title"><b>Contextualized Satire Detection in Short Texts Using Deep Learning Techniques</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span>, Muhammad Abulaish, and Jahiruddin</div>
+                                <div style="font-style: italic;">Journal of Web Engineering (JWE), 23(21), pp. 27-5, 2024</div>
                                 <div class="publication-links">
-                                    <a href="#">PDF</a>
-                                    <a href="#">Link</a>
-                                    <a href="#">BibTeX</a>
+                                    <a href="https://journals.riverpublishers.com/index.php/JWE/article/view/24351" target="_blank">Link</a>
+                                    <a href="upload/JWE24.pdf" target="_blank">PDF</a>
+                                    <a href="upload/JWE24_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>           
+                        </li>
+                         <li>
+                            <span class="publication-number">J2</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>BiCapsHate: Attention to the Linguistic Context of Hate via Bidirectional Capsules and Hatebase</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> Tarique Anwar and Vineet K. Sejwal and Mohd. Fazil</div>
+                                <div style="font-style: italic; color: green;">IEEE Transactions on Computational Social Systems (TCSS), 11(2), pp. 1781 - 1792, 2024</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/10022007" target="_blank">Link</a>
+                                    <a href="upload/TCSS24.pdf" target="_blank">PDF</a>
+                                    <a href="upload/TCSS24_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>   
+                        </li>
+                        <li>
+                            <span class="publication-number">J3</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>BiCHAT: BiLSTM with Deep CNN and Hierarchical Attention for Hate Speech Detection</b></div>
+                                <div>Shakir Khan and Mohd Fazil and Vineet K. Sejwal and Mohammed A. Alshara and Reemiah M. Alotaibi and <span style="color: blue;">Ashraf Kamal</span> and Abdul Rauf Baig</div>
+                                <div style="font-style: italic;"">Cognitive Computation (COGN), 34(7), pp. 4335-4344, 2022</div>
+                                <div class="publication-links">
+                                    <a href="https://www.sciencedirect.com/science/article/pii/S1319157822001550?via%3Dihub" target="_blank">Link</a>
+                                    <a href="upload/KSUCIS_23.pdf" target="_blank">PDF</a>
+                                    <a href="upload/KSUCIS23_bib.html" target="_blank">BibTeX</a>
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <span class="publication-number">J4</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>HCovBi-Caps: Hate Speech Detection Using Convolutional and Bi-Directional Gated Recurrent Unit With Capsule Network</b></div>
+                                <div>Shakir Khan and <span style="color: blue;">Ashraf Kamal</span> and Mohd Fazil and Mohammed A. Alshara and Vineet K. Sejwal and Reemiah M. Alotaibi</div>
+                                <div style="font-style: italic;"">IEEE Access, 10, pp. 7881-7894, 2022</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/9682725" target="_blank">Link</a>
+                                    <a href="upload/IEEE_Access22.pdf" target="_blank">PDF</a>
+                                    <a href="upload/IEEE_Access22_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">J5</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>CAT-BiGRU: Convolution and Attention with Bi-directional Gated Recurrent Unit for Self-Deprecating Sarcasm Detection</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
+                                <div style="font-style: italic;"">Cognitive Computation (COGN), 14, pp. 91-109, 2021</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/article/10.1007/s12559-021-09821-0" target="_blank">Link</a>
+                                    <a href="upload/COGN21.pdf" target="_blank">PDF</a>
+                                    <a href="upload/COGN21_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                         <li>
+                            <span class="publication-number">J6</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>A Survey of Figurative Language and its Computational Detection in Online Social Networks</b></div>
+                                <div>Muhammad Abulaish, <span style="color: blue;">Ashraf Kamal</span>, and Mohammed J. Zaki</div>
+                                <div style="font-style: italic; color: green;">ACM Transactions on the Web (TWEB), 14(1), pp. 1-52, 2020</div>
+                                <div class="publication-links">
+                                    <a href="https://dl.acm.org/doi/10.1145/3375547" target="_blank">Link</a>
+                                    <a href="upload/TWEB20.pdf" target="_blank">PDF</a>
+                                    <a href="upload/TWEB20_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        
                     </ul>
                 </div>
                
                 <!-- Conference Publications -->
                 <div class="subsection">
-                    <h3>Conference Papers</h3>
+                    <h3 style="color: brown;">Conference Papers</h3>
                     <ul class="publication-list">
                         <li>
                             <span class="publication-number">C1</span>
@@ -1500,7 +1709,7 @@
 
                 <!-- Book Chapters -->
                 <div class="subsection">
-                    <h3>Book Chapters</h3>
+                    <h3 style="color: brown;">Book Chapters</h3>
                     <ul class="publication-list">
                         <li>
                             <span class="publication-number">B1</span>
@@ -1543,57 +1752,56 @@
                         <p>2021</p>
                     </div>
                     <div class="interest-card">
-                        <h3>🧑‍🔬 Young Faculty Research Fellowship</h3>
-                        <p>Govt. of India, 2020</p>
+                        <h3>🧑‍🔬 Visvesvaraya PhD Research Fellowship</h3>
+                        <p></p>MeitY, Govt. of India, 2015-2020</p>
                     </div>
                 </div>
             </div>
 <!-- ...existing code... -->
 
-            <!-- ...existing code... -->
-            <!-- Service Section -->
-           <!-- ...existing code... -->
-            <!-- Service Section -->
+          
             <div class="section" id="service">
                 <h2>Service</h2>
-                <div class="metrics-section">
-                    <div class="metrics-grid">
-                        <div class="metric-card" style="text-align:left;">
-                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Program Committee Member</div>
-                            <ul style="padding-left:1.2rem; margin-bottom:0;">
-                                <li>NeurIPS</li>
-                                <li>ICML</li>
-                                <li>AAAI</li>
-                                <li>CVPR</li>
-                                <li>ACL</li>
-                            </ul>
-                        </div>
-                        <div class="metric-card" style="text-align:left;">
-                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer</div>
-                            <ul style="padding-left:1.2rem; margin-bottom:0;">
-                                <li>Nature</li>
-                                <li>Science</li>
-                                <li>IEEE Transactions</li>
-                                <li>JMLR</li>
-                            </ul>
-                        </div>
-                        <div class="metric-card" style="text-align:left;">
-                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Editorial Board</div>
-                            <ul style="padding-left:1.2rem; margin-bottom:0;">
-                                <li>Journal of Machine Intelligence</li>
-                                <li>AI in Healthcare</li>
-                            </ul>
-                        </div>
-                        <div class="metric-card" style="text-align:left;">
-                            <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Session Chair</div>
-                            <ul style="padding-left:1.2rem; margin-bottom:0;">
-                                <li>International Conference on AI, 2023</li>
-                            </ul>
-                        </div>
-                    </div>
+               
+                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">PC Member and Reviewer (Conferences)</div>
+                    <ul style="padding-left:1.2rem; margin-bottom:1rem;">
+                        <li>ICICCT (2025)</li>
+                        <li>ICON (2023)</li> 
+                        <li>ICONIP (2022)</li>
+                        <li>ICON (2021)</li>
+                        <li>ICON (2020)</li>
+                    </ul>
+                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer (Journals)</div>
+                    <ul style="padding-left:1.2rem; margin-bottom:1rem;">
+                        <li>IEEE Transactions on Computation Social Systems (TCSS)</li>
+                        <li>Cluster Computing</li>
+                        <li>Cognitive Computation</li>
+                        <li>Cognitive Neurodynamics</li>
+                        <li>Discover Applied Sciences</li>
+                        <li>Discover Artificial Intelligence</li>
+                        <li>IJDSA</li>
+                        <li>IEEE Access</li>
+                        <li>Neurocomputing</li>
+                        <li>PeerJ</li>
+                       
+                        <li>Knowledge and Information Systems</li>
+                        <li>Language Resources and Evaluation</li>
+                        <li>Peer-to-Peer Networking and Applications</li>
+                        <li>Scientific Reports</li>
+                        <li>Signal, Image and Video Processing</li>
+                        <li>Social Network Analysis and Mining</li>
+                        <li>The Journal of Supercomputing</li>
+                        
+                    </ul>
+                     <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer (Books)</div>
+                    <ul style="padding-left:1.2rem; margin-bottom:1rem;">
+                        <li>Deep Learning in Genetics & Genomics, Springer (2024)</li>
+                        <li>Artificial Intelligence and Autoimmune Diseases, Springer (2024)</li>
+                       
+                    </ul>
+                   
                 </div>
-            </div>
-<!-- ...existing code... -->
+        
 
 <!-- ...existing code... -->
                
