@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%233498db'/><text x='50%' y='50%' text-anchor='middle' dominant-baseline='central' font-size='32' font-family='Segoe UI, Arial, sans-serif' fill='white'>AK</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Ashraf Kamal</title>
+   
     <style>
         * {
             margin: 0;
@@ -237,8 +239,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
+            width: 35px;
+            height: 35px;
             background: var(--light-bg);
             color: var(--text-color);
             border-radius: 50%;
@@ -251,6 +253,8 @@
             background: var(--secondary-color);
             color: var(--white);
             transform: translateY(-3px);
+            width: 30px;
+            height: 30px;
         }
 
         .social-links a::before {
@@ -275,8 +279,8 @@
         }
 
         .social-links svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
@@ -313,13 +317,14 @@
             gap: 1rem;
             margin-bottom: 2rem;
             border-bottom: 2px solid var(--border-light);
+            color: black); 
         }
 
         .tab-button {
             padding: 10px 20px;
             background: none;
             border: none;
-            color: var(--gray);
+            color: var(--black);
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -361,6 +366,10 @@
             max-height: 200px;
             overflow: hidden;
             transition: max-height 0.5s ease;
+            text-align: justify;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.03rem;
+            line-height: 1.8;
         }
 
         .expandable-content.expanded {
@@ -437,7 +446,7 @@
         .experience-date {
             color: var(--secondary-color);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.1rem;
         }
 
         .experience-title {
@@ -448,7 +457,7 @@
         }
 
         .experience-company {
-            color: var(--gray);
+            color: var(--black);
             margin-bottom: 0.5rem;
         }
 
@@ -460,12 +469,12 @@
         /* Education Cards */
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 1.5rem;
         }
 
         .education-card {
-            background: linear-gradient(135deg, var(--light-accent) 0%, var(--white) 100%);
+            background: linear-gradient(135deg, var(--light-accent) 100%, var(--white) 100%);
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -474,7 +483,9 @@
         }
 
         .education-card:hover {
+            background: var(--medium-white); /* Match journal card hover color */
             transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
         .education-degree {
@@ -495,7 +506,7 @@
 
         /* Citation Metrics */
         .metrics-section {
-            background: linear-gradient(135deg, var(--light-accent) 0%, var(--white) 100%);
+            background: linear-gradient(135deg, var(--light-accent) 100%, var(--white) 100%);
             padding: 2rem;
             border-radius: 10px;
             margin-top: 2rem;
@@ -517,18 +528,19 @@
         }
 
         .metric-card:hover {
+            background: rgb(0, 208, 255); /* Change hover color for citation metrics */
             transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
-
         .metric-value {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--secondary-color);
+            color: var(--black);
             margin-bottom: 0.3rem;
         }
 
         .metric-label {
-            color: var(--gray);
+            color: var(blue);
             font-size: 0.9rem;
         }
 
@@ -548,10 +560,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        /* ...existing code... */
         .interest-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background: var(--medium-white); /* Same hover color as patent card */
+            transform: translateY(-5px);     /* Same lift effect as patent card */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
+/* ...existing code... */
 
         .interest-card h3 {
             color: var(--primary-color);
@@ -584,13 +599,13 @@
         /* Make patent number display match conference/publication number style */
         .patent-number {
             position: absolute;
-            left: -15px;
+            left: -19px;
             top: 50%;
             transform: translateY(-50%);
             background: var(--white);
             color: var(--secondary-color);
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -648,13 +663,13 @@
 
         .publication-number {
             position: absolute;
-            left: -15px;
+            left: -19px;
             top: 50%;
             transform: translateY(-50%);
             background: var(--white);
             color: var(--secondary-color); /* Blue color for number */
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1084,13 +1099,13 @@
                     <img src="upload/pic.jpg" alt="" class="profile-placeholder" style="object-fit:cover; object-position:center -10px; width:220px; height:220px; border-radius:50%; border:6px solid var(--light-bg); box-shadow:0 8px 25px rgba(0,0,0,0.15);" />
                 </div>
                 <div class="profile-info">
-                    <h1>Dr. Ashraf Kamal</h1>
-                    <div class="title">   Machine Learning Engineer |  <img src="upload/logo.png" alt="Logo" style="height:75px; vertical-align:middle; margin-right:8px;">
-                    </div>
-                    
-                    <div class="contact-info">
+                  
+                    <h1>Dr. Ashraf Kamal </h1> 
+                <h3 style="color: #6c757d;"><i>Machine Learning Engineer</i></h3>  <img src="upload/logo.png" alt="Logo" style="height:30px;">
+                   <br>
+                     <!--  <div class="contact-info">
                     <span>
-                        <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                      <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
                                 <rect x="2" y="4" width="20" height="16" rx="3" stroke="#3498db" stroke-width="2" fill="#fff"/>
                                 <path d="M3 6l9 7 9-7" stroke="#3498db" stroke-width="2" fill="none"/>
@@ -1103,7 +1118,7 @@
                        
                     </span>
                     
-                </div>
+                </div>-->
                     <div class="social-links">
                         <a href="https://scholar.google.com/citations?hl=en&user=XKkMYFwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar">
                             <svg viewBox="0 0 24 24">
@@ -1167,13 +1182,34 @@
             <!-- News Section -->
             <div class="section" id="news">
                 <h2>Latest News</h2>
-                <marquee behavior="scroll" direction="down" scrollamount="3" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
-                    May 2025: Two US Patents Published. <br>
-                    June 2025: US Patent Issued (Granted). <br>
-                    July 2025: Presented the accpeted Paper at ICCCNT 2025, IIT Indore, India.  <br>
-                    August 2025: One US Patent Issued (Granted).
+                <marquee behavior="scroll" direction="up" scrollamount="5" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
+                    <span style="display:block; color:darkblue; padding:4px 0;">
+                        July 2023: Presented the accepted Paper at ICCCNT 2023, IIT Delhi, New Delhi, India.
+                    </span>
+                    <span style="display:block; color:darkcyan; padding:4px 0;">
+                        October 2024: Presented the accepted Paper at ICDPN 2024, Czech Republic, Europe.
+                    </span>
+                    <span style="display:block; color:darkblue; padding:4px 0;">
+                        June 2024: Presented two accepted Papers at ICDAM 2024, London Metropolitan University, London, UK.
+                    </span>
+                    <span style="display:block; color:darkcyan; padding:4px 0;">
+                        April 2025: Two US Patents filed in USPTO.
+                    </span>
+                    <span style="display:block; color:darkblue;; padding:4px 0;">
+                        May 2025: Two US Patents Published.
+                    </span>
+                    <span style="display:block; color:darkcyan; padding:4px 0;">
+                        June 2025: US Patent Issued (Granted).
+                    </span>
+                    <span style="display:block; color:darkblue;; padding:4px 0;">
+                        July 2025: Presented the accepted Paper at ICCCNT 2025, IIT Indore, MP, India.
+                    </span>
+                    <span style="display:block; color:darkcyan; padding:4px 0;">
+                        August 2025: US Patent Issued (Granted).
+                    </span>
                 </marquee>
             </div>
+          
 <!-- ...existing code... -->
 
             <!-- About Section with Tabs -->
@@ -1193,7 +1229,7 @@
                         </p>
                         <br> 
                         <p style="text-align:justify;">
-                            Working in Privacy ML Team at PayPal. Experience in Machine Learning (ML), Deep Learning (DL), Text Mining, Natural Language Processing, Generative AI, IR, RAG, and Agentic AI. Currently, involved in develop novel theoretical ideas with practical insights, publish technical research papers, patent filing, and tech excellence activities on emerging technologies in Fintech. Besides that, involved in several GenAI related projects.
+                            Working in Privacy ML Team at PayPal. Experience in Machine Learning, Deep Learning, Text Mining, Natural Language Processing, Generative AI, IR, RAG, and Agentic AI. Currently, involved in develop novel theoretical ideas with practical insights, publish technical research papers, patent filing, and tech excellence activities on emerging technologies in Fintech. Besides that, involved in several GenAI related projects.
                         </p>
                         <br>
                         <p style="text-align:justify;">
@@ -1214,7 +1250,19 @@
                                 <div class="metric-value">550+</div>
                                 <div class="metric-label">Citations</div>
                             </div>
+                             <div class="metric-card">
+                                <div class="metric-value">11</div>
+                                <div class="metric-label">Filed Patents</div>
+                            </div>
                             <div class="metric-card">
+                                <div class="metric-value">2</div>
+                                <div class="metric-label">Granted Patents</div>
+                            </div>
+                             <div class="metric-card">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Published Patents</div>
+                            </div>
+                             <div class="metric-card">
                                 <div class="metric-value">10</div>
                                 <div class="metric-label">h-index</div>
                             </div>
@@ -1222,18 +1270,7 @@
                                 <div class="metric-value">10</div>
                                 <div class="metric-label">i10-index</div>
                             </div>
-                            <div class="metric-card">
-                                <div class="metric-value">2</div>
-                                <div class="metric-label">Granted Patents</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">5</div>
-                                <div class="metric-label">Published Patents</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">11</div>
-                                <div class="metric-label">Filed Patents</div>
-                            </div>
+
                             <div class="metric-card">
                                 <div class="metric-value">6</div>
                                 <div class="metric-label">Journal Papers</div>
@@ -1309,7 +1346,7 @@
                     <h3>Education</h3>
                     <div class="education-grid">
                         <div class="education-card">
-                            <div class="education-degree">Ph.D. in Computer Science</div>
+                            <div class="education-degree">Ph.D. - Computer Science</div>
                             <div class="education-school">Jamia Millia Islamia</div>
                             <div class="education-date">2015 - 2021</div>
                         </div>
@@ -1319,7 +1356,7 @@
                             <div class="education-date">2007 - 2010</div>
                         </div>
                         <div class="education-card">
-                            <div class="education-degree">Bachelors of Science (Honours) Physics</div>
+                            <div class="education-degree">B.Sc (Honours) Physics</div>
                             <div class="education-school">Jamia Millia Islamia</div>
                             <div class="education-date">2003 - 2006</div>
                         </div>
@@ -1610,7 +1647,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>Contextualized Satire Detection in Short Texts Using Deep Learning Techniques</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span>, Muhammad Abulaish, and Jahiruddin</div>
-                                <div style="font-style: italic;">Journal of Web Engineering (JWE), 23(21), pp. 27-5, 2024</div>
+                                <div style="font-style: italic; color:darkolivegreen;">Journal of Web Engineering (JWE), 23(21), pp. 27-5, 2024</div>
                                 <div class="publication-links">
                                     <a href="https://journals.riverpublishers.com/index.php/JWE/article/view/24351" target="_blank">Link</a>
                                     <a href="upload/JWE24.pdf" target="_blank">PDF</a>
@@ -1623,7 +1660,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>BiCapsHate: Attention to the Linguistic Context of Hate via Bidirectional Capsules and Hatebase</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> Tarique Anwar and Vineet K. Sejwal and Mohd. Fazil</div>
-                                <div style="font-style: italic; color: green;">IEEE Transactions on Computational Social Systems (TCSS), 11(2), pp. 1781 - 1792, 2024</div>
+                                <div style="font-style: italic; color: red;">IEEE Transactions on Computational Social Systems (TCSS), 11(2), pp. 1781 - 1792, 2024</div>
                                 <div class="publication-links">
                                     <a href="https://ieeexplore.ieee.org/abstract/document/10022007" target="_blank">Link</a>
                                     <a href="upload/TCSS24.pdf" target="_blank">PDF</a>
@@ -1636,7 +1673,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>BiCHAT: BiLSTM with Deep CNN and Hierarchical Attention for Hate Speech Detection</b></div>
                                 <div>Shakir Khan and Mohd Fazil and Vineet K. Sejwal and Mohammed A. Alshara and Reemiah M. Alotaibi and <span style="color: blue;">Ashraf Kamal</span> and Abdul Rauf Baig</div>
-                                <div style="font-style: italic;"">Cognitive Computation (COGN), 34(7), pp. 4335-4344, 2022</div>
+                                <div style="font-style: italic; color:darkolivegreen;">Cognitive Computation (COGN), 34(7), pp. 4335-4344, 2022</div>
                                 <div class="publication-links">
                                     <a href="https://www.sciencedirect.com/science/article/pii/S1319157822001550?via%3Dihub" target="_blank">Link</a>
                                     <a href="upload/KSUCIS_23.pdf" target="_blank">PDF</a>
@@ -1649,7 +1686,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>HCovBi-Caps: Hate Speech Detection Using Convolutional and Bi-Directional Gated Recurrent Unit With Capsule Network</b></div>
                                 <div>Shakir Khan and <span style="color: blue;">Ashraf Kamal</span> and Mohd Fazil and Mohammed A. Alshara and Vineet K. Sejwal and Reemiah M. Alotaibi</div>
-                                <div style="font-style: italic;"">IEEE Access, 10, pp. 7881-7894, 2022</div>
+                                <div style="font-style: italic; color:darkolivegreen;">IEEE Access, 10, pp. 7881-7894, 2022</div>
                                 <div class="publication-links">
                                     <a href="https://ieeexplore.ieee.org/abstract/document/9682725" target="_blank">Link</a>
                                     <a href="upload/IEEE_Access22.pdf" target="_blank">PDF</a>
@@ -1662,7 +1699,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>CAT-BiGRU: Convolution and Attention with Bi-directional Gated Recurrent Unit for Self-Deprecating Sarcasm Detection</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
-                                <div style="font-style: italic;"">Cognitive Computation (COGN), 14, pp. 91-109, 2021</div>
+                                <div style="font-style: italic; color:darkolivegreen;">Cognitive Computation (COGN), 14, pp. 91-109, 2021</div>
                                 <div class="publication-links">
                                     <a href="https://link.springer.com/article/10.1007/s12559-021-09821-0" target="_blank">Link</a>
                                     <a href="upload/COGN21.pdf" target="_blank">PDF</a>
@@ -1675,7 +1712,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>A Survey of Figurative Language and its Computational Detection in Online Social Networks</b></div>
                                 <div>Muhammad Abulaish, <span style="color: blue;">Ashraf Kamal</span>, and Mohammed J. Zaki</div>
-                                <div style="font-style: italic; color: green;">ACM Transactions on the Web (TWEB), 14(1), pp. 1-52, 2020</div>
+                                <div style="font-style: italic; color: red;">ACM Transactions on the Web (TWEB), 14(1), pp. 1-52, 2020</div>
                                 <div class="publication-links">
                                     <a href="https://dl.acm.org/doi/10.1145/3375547" target="_blank">Link</a>
                                     <a href="upload/TWEB20.pdf" target="_blank">PDF</a>
@@ -1688,19 +1725,48 @@
                 </div>
                
                 <!-- Conference Publications -->
-                <div class="subsection">
-                    <h3 style="color: brown;">Conference Papers</h3>
+                    <div class="subsection">
+                    <h3 style="color: brown;">Conferences</h3>
                     <ul class="publication-list">
                         <li>
-                            <span class="publication-number">C1</span>
+                            <span class="publication-number">C9</span>
                             <div style="margin-left: 20px;">
-                                <div class="publication-title">Attention Is All You Need: A Comprehensive Study</div>
-                                <div>Ashraf Kamal, Johnson, A., Williams, M., Chen, L.</div>
-                                <div style="font-style: italic;">NeurIPS 2024</div>
+                                <div class="publication-title"><b>An LSTM-Based Deep Learning Approach for Detecting Self-Deprecating Sarcasm in Textual Data</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
+                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the 16th International Conference on Natural Language Processing, LTRC, IIIT Hyderabad, India, December 18-21, 2019, pp. 201-210.</div>
                                 <div class="publication-links">
-                                    <a href="#">PDF</a>
-                                    <a href="#">Link</a>
-                                    <a href="#">BibTeX</a>
+                                    <a href="https://aclanthology.org/2019.icon-1.24/" target="_blank">Link</a>
+                                    <a href="upload/ICON19.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICON19_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                  
+                        <li>
+                            <span class="publication-number">C10</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Self-Deprecating Humor Detection: A Machine Learning Approach</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
+                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the 16th International Conference of the Pacific Association for Computational Linguistics (PACLING), Hanoi City, Vietnam, Communications in Computer and Information Science, vol. 1215. Springer, October 11-13, 2019, pp. 483--494</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/chapter/10.1007/978-981-15-6168-9_39" target="_blank">Link</a>
+                                    <a href="upload/PACLING19.pdf" target="_blank">PDF</a>
+                                    <a href="upload/PACLIC_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                     <ul class="publication-list">
+                        <li>
+                            <span class="publication-number">C10</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Self-Deprecating Sarcasm Detection: An Amalgamation of Rule-Based and Machine Learning Approach</b></div>
+                                <div>Muhammad Abulaish and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the IEEE/WIC/ACM International Conference on Web Intelligence (WI), Santiago, Chile, Dec. 3-6, 2018, pp. 574-579</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/document/8609648" target="_blank">Link</a>
+                                    <a href="upload/WI18.pdf" target="_blank">PDF</a>
+                                    <a href="upload/WI18_bib.html" target="_blank">BibTeX</a>
                                 </div>
                             </div>
                         </li>
@@ -1714,13 +1780,13 @@
                         <li>
                             <span class="publication-number">B1</span>
                             <div style="margin-left: 20px;">
-                                <div class="publication-title">Chapter 12: Deep Learning in Medical Imaging</div>
-                                <div>Ashraf Kamal, Martinez, R.</div>
-                                <div style="font-style: italic;">Handbook of AI in Healthcare, Springer, 2024</div>
+                                <div class="publication-title"><b>Generative Adversarial Networks in Protein and Ligand Structure Generation: A Case Study</b></div>
+                                <div>Syed Aslah A. Faizi, Nripendra K, Singh, <span style="color: blue;">Ashraf Kamal</span>, and Khalid Raza</div>
+                                <div style="font-style: italic;color:darkolivegreen;">Khalid Raza and Debmalya Barh and Deepak Singh and Naeem Ahmad (Eds.), <i style="color: red;">Deep Learning Applications in Translational Bioinformatics</i>, pp. 231-248, 2014</div>
                                 <div class="publication-links">
-                                    <a href="#">PDF</a>
-                                    <a href="#">Link</a>
-                                    <a href="#">BibTeX</a>
+                                    <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780443222993000141?via%3Dihub" target="_blank">Link</a>
+                                    <a href="upload/Book24.pdf" target="_blank">PDF</a>
+                                    <a href="upload/Book24_bib.html" target="_blank">BibTeX</a>
                                 </div>
                             </div>
                         </li>
@@ -1733,18 +1799,18 @@
             <!-- ...existing code... -->
             <!-- Awards & Recognition Section -->
             <div class="section" id="awards">
-                <h2>Awards & Recognition</h2>
+                <h2>Awards & Achievement</h2>
                 <div class="interests-grid">
                     <div class="interest-card">
-                        <h3>🏅 ACM Distinguished Scientist Award</h3>
-                        <p>2024</p>
+                        <h3>🧑‍🔬 Visvesvaraya PhD Research Fellowship</h3>
+                        <p></p>MeitY, Govt. of India, 2015-2020</p>
                     </div>
                     <div class="interest-card">
-                        <h3>🥇 Best Paper Award, NeurIPS</h3>
+                        <h3>🥇 Qualified UGC NET (CS) - 2024</h3>
                         <p>2023</p>
                     </div>
                     <div class="interest-card">
-                        <h3>🎖️ IEEE Senior Member</h3>
+                        <h3>🎖️ IEEE Member</h3>
                         <p>2022</p>
                     </div>
                     <div class="interest-card">
@@ -1763,7 +1829,7 @@
             <div class="section" id="service">
                 <h2>Service</h2>
                
-                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">PC Member and Reviewer (Conferences)</div>
+                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">PC Member and Reviewer: Conferences</div>
                     <ul style="padding-left:1.2rem; margin-bottom:1rem;">
                         <li>ICICCT (2025)</li>
                         <li>ICON (2023)</li> 
@@ -1771,7 +1837,7 @@
                         <li>ICON (2021)</li>
                         <li>ICON (2020)</li>
                     </ul>
-                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer (Journals)</div>
+                    <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer: Journals <span style="color:rgb(128, 113, 0)">(IEEE, Elsevier, Springer, etc.)</span></div>
                     <ul style="padding-left:1.2rem; margin-bottom:1rem;">
                         <li>IEEE Transactions on Computation Social Systems (TCSS)</li>
                         <li>Cluster Computing</li>
@@ -1779,7 +1845,7 @@
                         <li>Cognitive Neurodynamics</li>
                         <li>Discover Applied Sciences</li>
                         <li>Discover Artificial Intelligence</li>
-                        <li>IJDSA</li>
+                        <li>International Journal of Data Science and Analytics</li>
                         <li>IEEE Access</li>
                         <li>Neurocomputing</li>
                         <li>PeerJ</li>
@@ -1793,9 +1859,9 @@
                         <li>The Journal of Supercomputing</li>
                         
                     </ul>
-                     <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer (Books)</div>
+                     <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer: Books</div>
                     <ul style="padding-left:1.2rem; margin-bottom:1rem;">
-                        <li>Deep Learning in Genetics & Genomics, Springer (2024)</li>
+                        <li>Deep Learning in Genetics & Genomics, Elsevier (2024)</li>
                         <li>Artificial Intelligence and Autoimmune Diseases, Springer (2024)</li>
                        
                     </ul>
@@ -1973,7 +2039,8 @@
         <span id="visitor-country" style="flex:1; text-align:center;"></span>
         <span id="visitor-count" style="flex:1; text-align:right;"></span>
     </div>
-    <div style="text-align:center; font-size:0.95rem; margin-top:0.5rem;">Last Updated on :12-Sep-2025</div>
+    
+    <div style="text-align:center; font-size:0.95rem; margin-top:0.5rem;" id="last-updated"></div>
 </footer>
 <script>
     // Visitor country (ipinfo.io)
@@ -1990,7 +2057,13 @@
     hits = hits ? parseInt(hits) + 1 : 1;
     localStorage.setItem('site_hits', hits);
     document.getElementById('visitor-count').innerHTML =
-        `👁️ Total Hits: <b>${hits}</b>`;
+        `👁️ Total Hits: <b>${hits}</b>`;// Set current date for "Last Updated"
+    const lastUpdated = document.getElementById('last-updated');
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('en-GB', {
+        day: '2-digit', month: 'short', year: 'numeric'
+    }).replace(/ /g, '-');
+    lastUpdated.textContent = `Last Updated on :${formattedDate}`;
 </script>
 <!-- ...existing code... -->
 
