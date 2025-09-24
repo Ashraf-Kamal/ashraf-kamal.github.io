@@ -138,16 +138,21 @@
             color: white;
         }
 
-        .cv-link {
+       .cv-link {
             background: var(--secondary-color);
             color: white !important;
-            padding: 8px 20px;
-            border-radius: 10px;
+            padding: 6px 22px;              /* More horizontal padding for roundness */
+            border-radius: 999px;           /* Fully rounded pill shape */
             transition: all 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: 200;
+            font-size: 0.95rem;
+            font-weight: 500;
             display: inline-block;
             text-decoration: none;
+            height: 34px;
+            line-height: 22px;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+            box-sizing: border-box;
         }
 
         .cv-link:hover {
@@ -768,6 +773,7 @@
             padding: 3rem;
             text-align: center;
             background: linear-gradient(135deg, var(--light-accent) 0%, var(--white) 100%);
+            margin-bottom: 0 !important;
         }
 
         .contact-form-btn {
@@ -845,9 +851,9 @@
 .section#blog,
 .contact-section {
     background: var(--white);
-    border-radius: 10px;
+    border-radius: 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    margin-bottom: 2rem;
+    margin-bottom: 0 !important;
     padding: 3rem;
     border-top: 1px solid var(--border-light); /* Thin horizontal line at top */
 }
@@ -870,6 +876,9 @@
     .metrics-section {
         padding: 1rem !important;
     }
+    .section:last-of-type {
+    margin-bottom: 0 !important;
+}
 }
 
 /* Profile Section Responsive */
@@ -1049,6 +1058,20 @@
         right: 20px !important;
     }
 }
+
+.portrait-title h1 {
+    font-size: 2.1em;
+    font-weight: 500;
+    color: #000000;
+    margin: 20px 0 10px 0
+}
+
+.portrait-title h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.578);
+    margin: 0px 0 10px 0
+}
    
 /* Reduce gap between section title and first subsection heading */
 .section h2 {
@@ -1063,6 +1086,37 @@
 /* Reduce gap between publication section title and Journal Articles */
 #publications .subsection {
     margin-top: 0.3rem; /* Was larger, now less space above subsection */
+}
+
+/* Ensure Experience date displays well on mobile */
+@media (max-width: 900px) {
+    .experience-timeline {
+        padding-left: 0 !important;
+    }
+    .experience-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 1.2rem !important;
+    }
+    .experience-date {
+        font-size: 1rem !important;
+        margin-bottom: 0.2rem !important;
+        width: 100% !important;
+        text-align: left !important;
+        word-break: break-word !important;
+    }
+    .experience-title,
+    .experience-company,
+    .experience-description {
+        width: 100% !important;
+    }
+    .experience-item::before {
+        display: none !important;
+    }
+    .experience-timeline::before {
+        display: none !important;
+    }
 }
     </style>
 
@@ -1079,8 +1133,9 @@
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#awards">Awards</a></li>
                 <li><a href="#service">Service</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#blog">Media</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#" target="_blank">CV</a></li> -->
              
                
             </ul>
@@ -1091,6 +1146,7 @@
         </nav>
     </header>
 
+
     <div class="container">
         <div class="main-content">
             <!-- Profile Section -->
@@ -1098,27 +1154,43 @@
                 <div class="profile-image">
                     <img src="upload/pic.jpg" alt="" class="profile-placeholder" style="object-fit:cover; object-position:center -10px; width:220px; height:220px; border-radius:50%; border:6px solid var(--light-bg); box-shadow:0 8px 25px rgba(0,0,0,0.15);" />
                 </div>
-                <div class="profile-info">
+                <div class="portrait-title" style="margin-left:0;">
                   
-                    <h1>Dr. Ashraf Kamal </h1> 
-                <h3 style="color: #6c757d;"><i>Machine Learning Engineer</i></h3>  <img src="upload/logo.png" alt="Logo" style="height:30px;">
-                   <br>
-                     <!--  <div class="contact-info">
-                    <span>
-                      <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
-                                <rect x="2" y="4" width="20" height="16" rx="3" stroke="#3498db" stroke-width="2" fill="#fff"/>
-                                <path d="M3 6l9 7 9-7" stroke="#3498db" stroke-width="2" fill="none"/>
-                            </svg>
-                            contact@ashrafkamal.in  </a> |  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" stroke="#3498db" stroke-width="2" fill="#fff"/>
-                            <circle cx="12" cy="9.5" r="2.5" fill="#3498db"/>
+                    <h1 style="display:inline; font-size:2.1em; font-weight:800; color:#000;">Ashraf Kamal</h1>
+                    <span style="font-size:1.5em; font-weight:300; color:rgba(0,0,0,0.6); margin-left:1px;">| Ph.D. (JMI, New Delhi)</span>
+                 <br>  <br>
+                <h4 style="color: darkslategrey; margin-bottom: 8px;"><i>Machine Learning Engineer</i></h4>
+                <img src="upload/logo.png" alt="PayPal logo with overlapping blue P letters and the word PayPal in blue text, representing a professional and trustworthy financial technology environment" style="height:30px; margin-bottom: 5px;">
+                <br>
+                <!--  <div class="contact-info">
+                <span>
+                    <a href="mailto:ashraf.kamal@university.edu" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
+                                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="#3498db" stroke-width="2" fill="#fff"/>
+                                        <path d="M3 6l9 7 9-7" stroke="#3498db" stroke-width="2" fill="none"/>
+                                </svg>
+                                contact@ashrafkamal.in  </a> |  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:4px;">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" stroke="#3498db" stroke-width="2" fill="#fff"/>
+                                <circle cx="12" cy="9.5" r="2.5" fill="#3498db"/>
                         </svg>
                         New Delhi, India
-                       
-                    </span>
+                     
+                </span>
                     
                 </div>-->
+                 <div class="contact-info">
+                    <span>
+                    <a href="https://orcid.org/0000-0002-8344-3792" target="_blank" style="color:inherit; text-decoration:none; display:flex; align-items:center; justify-content:flex-start;">
+                       
+                        <svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:middle; margin-right:6px;">
+                            <circle cx="12" cy="12" r="12" fill="#A6CE39"/>
+                            <text x="12" y="16" text-anchor="middle" font-size="10" font-family="Arial, sans-serif" fill="white">iD</text>
+                        </svg>
+                        <u>0000-0002-8344-3792 </u>
+                    </a>
+                    </span>
+                    
+                </div>
                     <div class="social-links">
                         <a href="https://scholar.google.com/citations?hl=en&user=XKkMYFwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar">
                             <svg viewBox="0 0 24 24">
@@ -1130,11 +1202,7 @@
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="https://orcid.org/my-orcid?orcid=0000-0002-8344-3792" target="_blank" title="ORCID">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
-                            </svg>
-                        </a>
+                       
                         <a href="https://dblp.org/pid/233/3505.html" target="_blank" title="DBLP">
                             <svg viewBox="0 0 24 24">
                                 <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H5V7h7v10zm7 0h-5V7h5v10z"/>
@@ -1160,6 +1228,11 @@
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
+                        <!--   <a href="https://orcid.org/my-orcid?orcid=0000-0002-8344-3792" target="_blank" title="ORCID">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
+                            </svg>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -1181,7 +1254,7 @@
        
             <!-- News Section -->
             <div class="section" id="news">
-                <h2>Latest News</h2>
+                <h2>Latest Updates</h2>
                 <marquee behavior="scroll" direction="up" scrollamount="5" style="background:none; color:var(--primary-color); padding:2px 0; border-radius:6px; font-size:1rem;">
                     <span style="display:block; color:darkblue; padding:4px 0;">
                         July 2023: Presented the accepted Paper at ICCCNT 2023, IIT Delhi, New Delhi, India.
@@ -1222,10 +1295,15 @@
                     <button class="tab-button" onclick="showTab('skills')">Skills</button>
                 </div>
 
+                <!-- In the About > Overview tab, update the first paragraph as below -->
+<p style="text-align:justify;">
+                    
+</p>
+
                 <div id="overview" class="tab-content active">
                     <div class="expandable-content" id="overviewContent">
-                        <p style="text-align:justify;"></p>
-                            Dr. Ashraf Kamal has earned Doctor of Philosophy (PhD) - Computer Science from Jamia Millia Islamia (A Central University with A++ grade by the NAAC), New Delhi, India. PhD was funded by Ministry of Electronics & Information Technology, Government of India under prestigious Visvesvaraya PhD scheme. Research work is substantiated by more than 20 research publications and 5 US patents (2 Granted; 3 Published). Research papers are published in reputed SCI-indexed journals, including two in IEEE/ACM Transactions and CORE ranking conferences. Research interest lies in the intersection of Computational Linguistics, GenAI, ML, DL, and NLP. Research areas include the detection of figurative language like sarcasm & irony, abusive data, fake news, rumor, fintech, etc., in user-generated content via machine and deep learning techniques.
+                        <p style="text-align:justify;"></p></p>
+                            Dr. Ashraf Kamal has earned Doctor of Philosophy (PhD) - Computer Science from <a href="https://www.jmi.ac.in/" target="_blank" style="color:#3498db; text-decoration:none;">Jamia Millia Islamia (A Central University with A++ grade by the NAAC)</a>, New Delhi, India. PhD was funded by <a href="https://www.meity.gov.in/" target="_blank" style="color:#3498db; text-decoration:none;">Ministry of Electronics &amp; Information Technology</a>, Government of India under prestigious <a href="https://phd.dic.gov.in/" target="_blank" style="color:#3498db; text-decoration:none;">Visvesvaraya PhD scheme</a>. Research work is substantiated by more than 20 research publications and 5 US patents (2 Granted; 3 Published). Research papers are published in reputed SCI-indexed journals, including two in IEEE/ACM Transactions and CORE ranking conferences. Research interest lies in the intersection of Computational Linguistics, GenAI, ML, DL, and NLP. Research areas include the detection of figurative language like sarcasm & irony, abusive data, fake news, rumor, fintech, etc., in user-generated content via machine and deep learning techniques.
                         </p>
                         <br> 
                         <p style="text-align:justify;">
@@ -1346,7 +1424,7 @@
                     <h3>Education</h3>
                     <div class="education-grid">
                         <div class="education-card">
-                            <div class="education-degree">Ph.D. - Computer Science</div>
+                            <div class="education-degree">Ph.D - Computer Science</div>
                             <div class="education-school">Jamia Millia Islamia</div>
                             <div class="education-date">2015 - 2021</div>
                         </div>
@@ -1526,42 +1604,59 @@
                     <!-- Filed Patents -->
                     <div class="subsection">
                         <h3 style="color: brown;">Filed Patents</h3>
-                        <div class="patent-card">
+                          <div class="patent-card">
                              <span class="patent-number">P6</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    System and Method to Control Threats in AI-based Multi-Agents
+                                    System and Method for Managing Threats in Open Banking Services
                                 </div>
-                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal</span>, and Vishal K. Singh</div>
+                                <div><span style="color:#e82838;">Inventors:</span> <span style="color: blue;">Ashraf Kamal</span>, Padmapriya Mohankumar, and Vishal K. Singh</div>
                                 <div>
                                     <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
                                   <div>
-                                    <span class="patent-status filed" style="color: green;">Filed: July 2025</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                        <div class="patent-card">
-                             <span class="patent-number">P7</span>
-                            <div style="margin-left: 20px;">
-                                <div class="patent-title" style="font-weight:bold;">
-                                    Privacy-Enforcing Smart Contracts with Compliance Automation for Data Sharing
-                                </div>
-                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
-                                <div>
-                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
-                                </div>
-                                  <div>
-                                    <span class="patent-status filed" style="color: green;">Filed: May 2025</span>
+                                    <span class="patent-status filed" style="color: green;">Filed: June 2024</span>
                                 </div>
                                 
                             </div>
                         </div>
 
                          <div class="patent-card">
+                             <span class="patent-number">P7</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Copyright and Data Protection in AI Models
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i> (TBA) </span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: September 2024</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="patent-card">
                              <span class="patent-number">P8</span>
+                            <div style="margin-left: 20px;">
+                                <div class="patent-title" style="font-weight:bold;">
+                                    System and Method for Interpretability of Complex Black-Box Models
+                                </div>
+                                <div><span style="color:#e82838;">Inventors:</span> Vishal K. Singh, Padmapriya Mohankumar, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div>
+                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
+                                </div>
+                                  <div>
+                                    <span class="patent-status filed" style="color: green;">Filed: April 2025</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="patent-card">
+                             <span class="patent-number">P9</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
                                     System and Method to Avoid Cross-Channel Risks in Omnichannel Services
@@ -1578,50 +1673,34 @@
                         </div>
 
                          <div class="patent-card">
-                             <span class="patent-number">P9</span>
+                             <span class="patent-number">P10</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    System and Method for Interpretability of Complex Black-Box Models
+                                    Privacy-Enforcing Smart Contracts with Compliance Automation for Data Sharing
                                 </div>
-                                <div><span style="color:#e82838;">Inventors:</span> Vishal K. Singh, Padmapriya Mohankumar, and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
                                 <div>
                                     <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
                                   <div>
-                                    <span class="patent-status filed" style="color: green;">Filed: April 2025</span>
+                                    <span class="patent-status filed" style="color: green;">Filed: May 2025</span>
                                 </div>
                                 
                             </div>
                         </div>
 
-                         <div class="patent-card">
-                             <span class="patent-number">P10</span>
-                            <div style="margin-left: 20px;">
-                                <div class="patent-title" style="font-weight:bold;">
-                                    System and Method for Copyright and Data Protection in AI Models
-                                </div>
-                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, Vishal K. Singh, and <span style="color: blue;">Ashraf Kamal</span></div>
-                                <div>
-                                    <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i> (TBA) </span> 
-                                </div>
-                                  <div>
-                                    <span class="patent-status filed" style="color: green;">Filed: September 2024</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                         <div class="patent-card">
+                        <div class="patent-card">
                              <span class="patent-number">P11</span>
                             <div style="margin-left: 20px;">
                                 <div class="patent-title" style="font-weight:bold;">
-                                    System and Method for Managing Threats in Open Banking Services
+                                    System and Method to Control Threats in AI-based Multi-Agents
                                 </div>
-                                <div><span style="color:#e82838;">Inventors:</span> <span style="color: blue;">Ashraf Kamal</span>, Padmapriya Mohankumar, and Vishal K. Singh</div>
+                                <div><span style="color:#e82838;">Inventors:</span> Padmapriya Mohankumar, <span style="color: blue;">Ashraf Kamal</span>, and Vishal K. Singh</div>
                                 <div>
                                     <span style="color:darkolivegreen;"><i>US Patent Application Number </i>: <i>US18/XXX,XXX </i>(TBA) </span> 
                                 </div>
                                   <div>
-                                    <span class="patent-status filed" style="color: green;">Filed: June 2024</span>
+                                    <span class="patent-status filed" style="color: green;">Filed: July 2025</span>
                                 </div>
                                 
                             </div>
@@ -1647,7 +1726,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>Contextualized Satire Detection in Short Texts Using Deep Learning Techniques</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span>, Muhammad Abulaish, and Jahiruddin</div>
-                                <div style="font-style: italic; color:darkolivegreen;">Journal of Web Engineering (JWE), 23(21), pp. 27-5, 2024</div>
+                                <div style="font-style: italic; color:darkolivegreen;font-size: 14.5px; display:inline;">Journal of Web Engineering (JWE), 23(21), pp. 27-5, 2024</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 1.0)</span>
                                 <div class="publication-links">
                                     <a href="https://journals.riverpublishers.com/index.php/JWE/article/view/24351" target="_blank">Link</a>
                                     <a href="upload/JWE24.pdf" target="_blank">PDF</a>
@@ -1660,7 +1739,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>BiCapsHate: Attention to the Linguistic Context of Hate via Bidirectional Capsules and Hatebase</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> Tarique Anwar and Vineet K. Sejwal and Mohd. Fazil</div>
-                                <div style="font-style: italic; color: red;">IEEE Transactions on Computational Social Systems (TCSS), 11(2), pp. 1781 - 1792, 2024</div>
+                                <div style="font-style: italic; color:darkolivegreen;font-size: 14.5px; display:inline;">IEEE Transactions on Computational Social Systems (TCSS), 11(2), pp. 1781 - 1792, 2024</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 4.9)</span>
                                 <div class="publication-links">
                                     <a href="https://ieeexplore.ieee.org/abstract/document/10022007" target="_blank">Link</a>
                                     <a href="upload/TCSS24.pdf" target="_blank">PDF</a>
@@ -1673,7 +1752,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>BiCHAT: BiLSTM with Deep CNN and Hierarchical Attention for Hate Speech Detection</b></div>
                                 <div>Shakir Khan and Mohd Fazil and Vineet K. Sejwal and Mohammed A. Alshara and Reemiah M. Alotaibi and <span style="color: blue;">Ashraf Kamal</span> and Abdul Rauf Baig</div>
-                                <div style="font-style: italic; color:darkolivegreen;">Cognitive Computation (COGN), 34(7), pp. 4335-4344, 2022</div>
+                                <div style="font-style: italic; color:darkolivegreen;font-size: 14.5px; display:inline;">Cognitive Computation (COGN), 34(7), pp. 4335-4344, 2022</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 4.3)</span>
                                 <div class="publication-links">
                                     <a href="https://www.sciencedirect.com/science/article/pii/S1319157822001550?via%3Dihub" target="_blank">Link</a>
                                     <a href="upload/KSUCIS_23.pdf" target="_blank">PDF</a>
@@ -1686,7 +1765,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>HCovBi-Caps: Hate Speech Detection Using Convolutional and Bi-Directional Gated Recurrent Unit With Capsule Network</b></div>
                                 <div>Shakir Khan and <span style="color: blue;">Ashraf Kamal</span> and Mohd Fazil and Mohammed A. Alshara and Vineet K. Sejwal and Reemiah M. Alotaibi</div>
-                                <div style="font-style: italic; color:darkolivegreen;">IEEE Access, 10, pp. 7881-7894, 2022</div>
+                                <div style="font-style: italic; color:darkolivegreen;font-size: 14.5px; display:inline;">IEEE Access, 10, pp. 7881-7894, 2022</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 3.6)</span>
                                 <div class="publication-links">
                                     <a href="https://ieeexplore.ieee.org/abstract/document/9682725" target="_blank">Link</a>
                                     <a href="upload/IEEE_Access22.pdf" target="_blank">PDF</a>
@@ -1699,7 +1778,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>CAT-BiGRU: Convolution and Attention with Bi-directional Gated Recurrent Unit for Self-Deprecating Sarcasm Detection</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
-                                <div style="font-style: italic; color:darkolivegreen;">Cognitive Computation (COGN), 14, pp. 91-109, 2021</div>
+                                <div style="font-style: italic; color:darkolivegreen;font-size: 14.5px; display:inline;">Cognitive Computation (COGN), 14, pp. 91-109, 2021</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 4.3)</span>
                                 <div class="publication-links">
                                     <a href="https://link.springer.com/article/10.1007/s12559-021-09821-0" target="_blank">Link</a>
                                     <a href="upload/COGN21.pdf" target="_blank">PDF</a>
@@ -1712,7 +1791,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>A Survey of Figurative Language and its Computational Detection in Online Social Networks</b></div>
                                 <div>Muhammad Abulaish, <span style="color: blue;">Ashraf Kamal</span>, and Mohammed J. Zaki</div>
-                                <div style="font-style: italic; color: red;">ACM Transactions on the Web (TWEB), 14(1), pp. 1-52, 2020</div>
+                                <div style="font-style: italic; color:red;font-size: 14.5px; display:inline;">ACM Transactions on the Web (TWEB), 14(1), pp. 1-52, 2020</div> <span style="display:inline; font-size: 14.5px;color:#1a6469">| (Indexing: SCIE; Impact factor: 4.1)</span>
                                 <div class="publication-links">
                                     <a href="https://dl.acm.org/doi/10.1145/3375547" target="_blank">Link</a>
                                     <a href="upload/TWEB20.pdf" target="_blank">PDF</a>
@@ -1728,12 +1807,116 @@
                     <div class="subsection">
                     <h3 style="color: brown;">Conferences</h3>
                     <ul class="publication-list">
+                         <li>
+                            <span class="publication-number">C1</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Deep Reinforcement Learning Approach for Customer Churn Prediction  Using Multi AI Agents</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Padmapriya Mohankuamr and Vishal K. Singh</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 16th IEEE International Conference on Computing Communication and Networking Technologies (ICCCNT) IIT Indore, India, July 7-11, 2025, pp. 1-6</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/document/10306452" target="_blank">Link</a>
+                                    <a href="upload/ICCCNT_23.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICCCNT23_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">C2</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Cyber Threat Detection by Leveraging Contextual and Semantic Knowledge</b></div>
+                                <div>Vishal K. Singh and Padmapriya Mohankuamr and <span style="color: blue;">Ashraf Kamal</span> </div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the International Conference on Data-Processing and Networks (ICDPN) London, India, June 14-15, 2024, pp. 363-372</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-3102-5_27" target="_blank">Link</a>
+                                    <a href="upload/ICDPN24.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICDPN24_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">C3</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>CoMFinSe-MusCaAt: Code-Mixed Financial Sentiment Classification via Multi-scale Context-Aware Attention on Low-Resource Language Settings</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Padmapriya Mohankuamr and Vishal K. Singh</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 5th International Conference on Data Analytics and Management (ICDAM) London, India, June 14-15, 2024, pp. 383-392</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-3352-4_27" target="_blank">Link</a>
+                                    <a href="upload/ICDAM24_1.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICDAM24_1_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                         <li>
+                            <span class="publication-number">C4</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Financial Fact-Check Via Multi-modal Embedded Representation and Attention-Fused Network</b></div>
+                                <div>Padmapriya Mohankuamr and Vishal K. Singh and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 5th International Conference on Data Analytics and Management (ICDAM) London, India, June 14-15, 2024, pp. 35-43</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-3372-2_3" target="_blank">Link</a>
+                                    <a href="upload/ICDAM24.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICDAM24_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                         <li>
+                            <span class="publication-number">C5</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Financial Misinformation Detection via RoBERTa and Multi-channel Networks</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Padmapriya Mohankuamr and Vishal K. Singh</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 10th International Conference on Pattern Recognition and Machine Intelligence (PReMi) ISI Kolkata, India, Dec 12-15, 2023, pp. 646-653</div>
+                                <div class="publication-links">
+                                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-45170-6_67" target="_blank">Link</a>
+                                    <a href="upload/PReMI_23.pdf" target="_blank">PDF</a>
+                                    <a href="upload/PReMi23_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">C6</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Fin-STance: A Novel Deep Learning-Based Multi-Task Model for Detecting Financial Stance and Sentiment</b></div>
+                                <div>Vishal K. Singh and Padmapriya Mohankuamr and <span style="color: blue;">Ashraf Kamal</span></div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 14th IEEE International Conference on Computing Communication and Networking Technologies (ICCCNT) IIT Delhi, India, July 6-8, 2023, pp. 1-6</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/document/10306452" target="_blank">Link</a>
+                                    <a href="upload/ICCCNT_23.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICCCNT23_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">C7</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>Financial Fake News Detection via Context-Aware Embedding and Sequential Representation using Cross-Joint Networks</b></div>
+                                <div>Padmapriya Mohankuamr and <span style="color: blue;">Ashraf Kamal</span> and Vishal K. Singh and Amrish Satish</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 15th International Conference on COMmunication Systems & NETworkS (COMSNETS) Bengaluru, India, January 3-8, 2023, pp. 780-784</div>
+                                <div class="publication-links">
+                                    <a href="https://ieeexplore.ieee.org/document/10041329" target="_blank">Link</a>
+                                    <a href="upload/MINDS22.pdf" target="_blank">PDF</a>
+                                    <a href="upload/MINDS22_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="publication-number">C8</span>
+                            <div style="margin-left: 20px;">
+                                <div class="publication-title"><b>IMFinE: An Integrated BERT-CNN-BiGRU Model for Mental Health Detection in Financial Context on Textual Data</b></div>
+                                <div><span style="color: blue;">Ashraf Kamal</span> and Padmapriya Mohankuamr and Vishal K. Singh</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 19th International Conference on Natural Language Processing (ICON), IIIT Delhi, New Delhi, India, December 15-18, 2022, pp. 139-148</div>
+                                <div class="publication-links">
+                                    <a href="https://aclanthology.org/2022.icon-main.19/" target="_blank">Link</a>
+                                    <a href="upload/ICON22.pdf" target="_blank">PDF</a>
+                                    <a href="upload/ICON22_bib.html" target="_blank">BibTeX</a>
+                                </div>
+                            </div>
+                        </li>
                         <li>
                             <span class="publication-number">C9</span>
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>An LSTM-Based Deep Learning Approach for Detecting Self-Deprecating Sarcasm in Textual Data</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
-                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the 16th International Conference on Natural Language Processing, LTRC, IIIT Hyderabad, India, December 18-21, 2019, pp. 201-210.</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 16th International Conference on Natural Language Processing (ICON), LTRC, IIIT Hyderabad, India, December 18-21, 2019, pp. 201-210</div>
                                 <div class="publication-links">
                                     <a href="https://aclanthology.org/2019.icon-1.24/" target="_blank">Link</a>
                                     <a href="upload/ICON19.pdf" target="_blank">PDF</a>
@@ -1747,22 +1930,22 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>Self-Deprecating Humor Detection: A Machine Learning Approach</b></div>
                                 <div><span style="color: blue;">Ashraf Kamal</span> and Muhammad Abulaish</div>
-                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the 16th International Conference of the Pacific Association for Computational Linguistics (PACLING), Hanoi City, Vietnam, Communications in Computer and Information Science, vol. 1215. Springer, October 11-13, 2019, pp. 483--494</div>
+                                <div style="font-style: italic;color:darkolivegreen;font-size: 14px;">In Proceedings of the 16th International Conference of the Pacific Association for Computational Linguistics (PACLING), Hanoi City, Vietnam, Communications in Computer and Information Science, vol. 1215. Springer, October 11-13, 2019, pp. 483--494</div>
                                 <div class="publication-links">
                                     <a href="https://link.springer.com/chapter/10.1007/978-981-15-6168-9_39" target="_blank">Link</a>
                                     <a href="upload/PACLING19.pdf" target="_blank">PDF</a>
-                                    <a href="upload/PACLIC_bib.html" target="_blank">BibTeX</a>
+                                    <a href="upload/PACLING19_bib.html" target="_blank">BibTeX</a>
                                 </div>
                             </div>
                         </li>
                     </ul>
                      <ul class="publication-list">
                         <li>
-                            <span class="publication-number">C10</span>
+                            <span class="publication-number">C11</span>
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>Self-Deprecating Sarcasm Detection: An Amalgamation of Rule-Based and Machine Learning Approach</b></div>
                                 <div>Muhammad Abulaish and <span style="color: blue;">Ashraf Kamal</span></div>
-                                <div style="font-style: italic;color:darkolivegreen;">In Proceedings of the IEEE/WIC/ACM International Conference on Web Intelligence (WI), Santiago, Chile, Dec. 3-6, 2018, pp. 574-579</div>
+                                <div style="font-style: italic;color:darkolivegreen; font-size: 14px;">In Proceedings of the IEEE/WIC/ACM International Conference on Web Intelligence (WI), Santiago, Chile, Dec. 3-6, 2018, pp. 574-579</div>
                                 <div class="publication-links">
                                     <a href="https://ieeexplore.ieee.org/document/8609648" target="_blank">Link</a>
                                     <a href="upload/WI18.pdf" target="_blank">PDF</a>
@@ -1782,7 +1965,7 @@
                             <div style="margin-left: 20px;">
                                 <div class="publication-title"><b>Generative Adversarial Networks in Protein and Ligand Structure Generation: A Case Study</b></div>
                                 <div>Syed Aslah A. Faizi, Nripendra K, Singh, <span style="color: blue;">Ashraf Kamal</span>, and Khalid Raza</div>
-                                <div style="font-style: italic;color:darkolivegreen;">Khalid Raza and Debmalya Barh and Deepak Singh and Naeem Ahmad (Eds.), <i style="color: red;">Deep Learning Applications in Translational Bioinformatics</i>, pp. 231-248, 2014</div>
+                                <div style="font-style: italic;color:darkolivegreen; font-size: 14px;">Khalid Raza and Debmalya Barh and Deepak Singh and Naeem Ahmad (Eds.), <i style="color: red;">Deep Learning Applications in Translational Bioinformatics</i>, pp. 231-248, 2014</div>
                                 <div class="publication-links">
                                     <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780443222993000141?via%3Dihub" target="_blank">Link</a>
                                     <a href="upload/Book24.pdf" target="_blank">PDF</a>
@@ -1799,8 +1982,15 @@
             <!-- ...existing code... -->
             <!-- Awards & Recognition Section -->
             <div class="section" id="awards">
-                <h2>Awards & Achievement</h2>
-                <div class="interests-grid">
+                <h2>Awards </h2>
+                <ul class="awards-list">
+                    <li>Visvesvaraya PhD Fellowship, Ministry of Electronics & IT (MeitY), Government of India - (2015 - 2020)</li>
+                    <li>Qualified UGC NET (Computer Science) - 2014</li>
+                    <li>IEEE, Student Member - (2015 - 2020)</li>
+                    <li>ACM (Student Member) - (2015 - 2020)</li>
+                    <li>Merit-cum-Means Scholarship, Minitry of Minorities Affairs, Government of India - (2008 - 2010) </li>
+                </ul>   
+                           <!-- . <div class="interests-grid">
                     <div class="interest-card">
                         <h3>🧑‍🔬 Visvesvaraya PhD Research Fellowship</h3>
                         <p></p>MeitY, Govt. of India, 2015-2020</p>
@@ -1821,7 +2011,7 @@
                         <h3>🧑‍🔬 Visvesvaraya PhD Research Fellowship</h3>
                         <p></p>MeitY, Govt. of India, 2015-2020</p>
                     </div>
-                </div>
+                </div>  -->
             </div>
 <!-- ...existing code... -->
 
@@ -1831,11 +2021,11 @@
                
                     <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">PC Member and Reviewer: Conferences</div>
                     <ul style="padding-left:1.2rem; margin-bottom:1rem;">
-                        <li>ICICCT (2025)</li>
-                        <li>ICON (2023)</li> 
-                        <li>ICONIP (2022)</li>
-                        <li>ICON (2021)</li>
-                        <li>ICON (2020)</li>
+                        <li>ICICCT - 2025</li>
+                        <li>ICON - 2023</li> 
+                        <li>ICONIP - 2022</li>
+                        <li>ICON - 2021</li>
+                        <li>ICON - 2020</li>
                     </ul>
                     <div style="font-weight:bold; color:var(--secondary-color); margin-bottom:0.5rem;">Reviewer: Journals <span style="color:rgb(128, 113, 0)">(IEEE, Elsevier, Springer, etc.)</span></div>
                     <ul style="padding-left:1.2rem; margin-bottom:1rem;">
@@ -1870,16 +2060,57 @@
         
 
 <!-- ...existing code... -->
+               <div class="section" id="blog">
+                <h2>Media</h2>
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 2rem 0;">
+                    <a href="https://spectrum.ieee.org/ai-versus-online-hate-speech" target="_blank" style="text-decoration: none;">
+                        <img src="upload/IEEE-Spectrum.png" alt="IEEE Spectrum" style="width:100%; max-width:700px; height:auto; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.12); margin-bottom:2rem;">
+                    </a>
+                    <div style="max-width:700px; text-align:center;">
+                        <div style="color: #3498db; font-size: 1.1rem; margin-bottom: 0.7rem;">February - 2023</div>
+                        <div style="font-weight: bold; color: #2c3e50; font-size: 2rem; margin-bottom: 1rem;">
+                            Featured in IEEE Spectrum
+                        </div>
+                        <div style="font-size: 11pt; color:#333; margin-bottom:1.5rem;">
+                            The paper entitled: 
+                            "<a href="https://ieeexplore.ieee.org/abstract/document/10022007" target="_blank" style="color:#3498db; text-decoration:none;">BiCapsHate: Attention to the Context of Hate via Bidirectional Capsules and Hatebase</a>" 
+                            published in <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6570650" target="_blank" style="color:red; text-decoration:none;"><i>IEEE Transactions on Computational Social Systems</i></a> 
+                            is featured in reputed <a href="https://spectrum.ieee.org/about" target="_blank" style="color:#3498db; text-decoration:underline;">IEEE Spectrum</a>. 
+                            The article discusses how AI can help detect and mitigate online hate speech and highlights the challenges and advancements in this critical area of research.
+                        </div>
+                        <a href="https://spectrum.ieee.org/ai-versus-online-hate-speech" target="_blank" class="media-article-link">
+                            Read Article
+                        </a>
+                        <style>
+                        .media-article-link {
+                            display: inline-block;
+                            background: #3498db;
+                            color: #fff;
+                            font-weight: 400;
+                            padding: 8px 20px;
+                            border-radius: 8px;
+                            font-size: 0.9rem;
+                            text-decoration: none;
+                            box-shadow: 0 2px 8px rgba(52,152,219,0.12);
+                            transition: background 0.3s, color 0.3s;
+                        }
+                        .media-article-link:hover {
+                            background: var(--primary-color);
+                            color: #fff;
+                        }
+                        </style>
+                    </div>
+                </div>
+            </div> 
                
-               
-            <!-- Blog Section -->
+            <!-- Blog Section 
             <div class="section" id="blog">
-                <h2>Recent Blog Posts</h2>
+                <h2>Media</h2>
                 <div class="blog-grid">
                     <div class="blog-card">
                         <div class="blog-image">📝</div>
                         <div class="blog-content">
-                            <div style="color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 0.5rem;">December 2024</div>
+                            <div style="color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 0.5rem;">May 2025</div>
                             <div style="font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem;">The Future of AI in Healthcare</div>
                             <div class="blog-excerpt" id="blog1">
                                 Exploring the transformative potential of AI in medical diagnosis and treatment. Recent advances in deep learning have opened up new possibilities for early disease detection, personalized treatment plans, and drug discovery. In this post, I discuss how federated learning can enable collaborative medical research while preserving patient privacy...
@@ -1900,6 +2131,7 @@
                     </div>
                 </div>
             </div>
+            -->
 
              <!-- ...existing code... -->
         
@@ -2034,13 +2266,14 @@
 
     <!-- ...existing code... -->
 <footer>
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:0.95rem;">
-        <span style="flex:1; text-align:left;">&copy; 2025 - Ashraf Kamal, All Rights Reserved.</span>
-        <span id="visitor-country" style="flex:1; text-align:center;"></span>
-        <span id="visitor-count" style="flex:1; text-align:right;"></span>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:0.95rem; ">
+        <span id="visitor-count" style="flex:1; text-align:left;"></span>
+        <span style="flex:1; text-align:center;">&copy; 2025 - Ashraf Kamal, All Rights Reserved.</span>
+        <span id="last-updated" style="flex:1; text-align:right;"></span>
     </div>
+    <!-- <span id="visitor-country" style="flex:1; text-align:center; display:none;"></span> -->
     
-    <div style="text-align:center; font-size:0.95rem; margin-top:0.5rem;" id="last-updated"></div>
+     <div style="text-align:center; font-size:0.95rem; margin-top:0.5rem;" id="last-updated">
 </footer>
 <script>
     // Visitor country (ipinfo.io)
@@ -2063,7 +2296,7 @@
     const formattedDate = today.toLocaleDateString('en-GB', {
         day: '2-digit', month: 'short', year: 'numeric'
     }).replace(/ /g, '-');
-    lastUpdated.textContent = `Last Updated on :${formattedDate}`;
+    lastUpdated.textContent = `Last Updated on: ${formattedDate}`;
 </script>
 <!-- ...existing code... -->
 
